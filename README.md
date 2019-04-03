@@ -9,3 +9,5 @@ Social network for training purpose
 02 [Уроки React JS (Зачем NodeJS на фронте)](https://www.youtube.com/watch?v=WN2LHq3yRwQ) - Intro NodeJS
 
 03 [Уроки React JS (Установка NodeJS)](https://www.youtube.com/watch?v=AUi1JT4n8xA) - Install NodeJS
+
+[NodeJS](https://nodejs.org/en/)
