@@ -11,3 +11,23 @@ Social network for training purpose
 03 [Уроки React JS (Установка NodeJS)](https://www.youtube.com/watch?v=AUi1JT4n8xA) - Install NodeJS
 
 [NodeJS](https://nodejs.org/en/)
+
+04 [Уроки React JS](https://www.youtube.com/watch?v=9Jk8SLMl3gI) - create-react-app
+
+[create-react-app](https://github.com/facebook/create-react-app)
+
+```
+npx create-react-app my-app
+cd my-app
+npm start
+```
+
+```
+yarn start
+```
+
+05 [Уроки React JS](https://www.youtube.com/watch?v=TPYgQvY9VVQ) - SPA: single page application
+
+06 [Уроки React JS](https://www.youtube.com/watch?v=CdweQ2F2qBI) - index.js, App, JSX
+
+07 [Уроки React JS](https://www.youtube.com/watch?v=UMw_hbNMIAA) - commponent - it's function, that return JSX code.
