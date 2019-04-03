@@ -31,3 +31,26 @@ yarn start
 06 [Уроки React JS](https://www.youtube.com/watch?v=CdweQ2F2qBI) - index.js, App, JSX
 
 07 [Уроки React JS](https://www.youtube.com/watch?v=UMw_hbNMIAA) - commponent - it's function, that return JSX code.
+
+Jeigu, return ir JSX kodas prasideda ta pačia eilute, galima nedėti neapskliausti JSX kodo
+
+```
+const App = () => {
+  return <div className="App">
+    <h1>SOCNET</h1>
+  </div>
+}
+```
+```
+const App = () => {
+  return (
+    <div className="App">
+      <h1>SOCNET</h1>
+    </div>
+  );
+}
+```
+Komponento 'iškvietimas':
+```
+<App />
+```
