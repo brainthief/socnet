@@ -14,7 +14,7 @@ Social network for training purpose
 
 04 [Уроки React JS](https://www.youtube.com/watch?v=9Jk8SLMl3gI) - create-react-app
 
-[create-react-app](https://github.com/facebook/create-react-app)
+[create-react-app](https://github.com/facebook/create-react-app) - GITHUB CRA
 
 ```
 npx create-react-app my-app
@@ -54,3 +54,22 @@ Komponento 'iškvietimas':
 ```
 <App />
 ```
+08 [Уроки React JS](https://www.youtube.com/watch?v=lXpPS4wKDfE) - import / export
+
+* import only what export other module
+
+* export const Profile...
+
+* export default const Profile...
+
+* import Profile from './profile - imports default export
+
+* import React from 'react' - import from node modules
+
+* import {Profile} from './profile' - import not default export
+
+* import Profile form './../profile'
+
+09 [Уроки React JS](https://www.youtube.com/watch?v=VTr3pCutjxg) - import / export our component to modules
+
+[List all lessons](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8)
