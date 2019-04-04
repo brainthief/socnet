@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 import Header from './Header'
-import Technologies from './Technolies'
+import Technologies from './Technologies'
+import Footer from './Footer';
 
 const App = () => {
   return (<>
@@ -10,6 +11,7 @@ const App = () => {
       <h1>SOCNET</h1>
     </div>
     <Technologies />
+    <Footer />
   </>
   );
 }
