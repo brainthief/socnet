@@ -32,6 +32,8 @@ yarn start
 
 07 [Уроки React JS](https://www.youtube.com/watch?v=UMw_hbNMIAA) - component - it's function, that return JSX code.
 
+* component must start with capital letter 
+
 Jeigu, return ir JSX kodas prasideda ta pačia eilute, galima nedėti neapskliausti JSX kodo
 
 ```
