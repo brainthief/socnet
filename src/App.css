@@ -65,6 +65,10 @@ body {
   text-align: center;
 }
 
+.appWrapper .content .contentText img{
+  max-width: 100%;
+}
+
 @media only screen and (max-width: 1000px) {
   .appWrapper .mainText {
     font-size: 3em;
