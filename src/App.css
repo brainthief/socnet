@@ -52,6 +52,7 @@ body {
   padding-top: 3px;
   color: black;
   background-color: rgba(256,256,256, 0.9);
+  font-size: 1.5em;
 }
 
 .appWrapper .content {
@@ -65,8 +66,16 @@ body {
   text-align: center;
 }
 
-.appWrapper .content .contentText img{
-  max-width: 100%;
+
+
+.appWrapper .content .contentText .profImg{
+  background: #000;
+  height: 200px;
+  width: auto;
+  background-image: url(./img/colors.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 @media only screen and (max-width: 1000px) {
