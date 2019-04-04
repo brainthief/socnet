@@ -30,7 +30,7 @@ yarn start
 
 06 [Уроки React JS](https://www.youtube.com/watch?v=CdweQ2F2qBI) - index.js, App, JSX
 
-07 [Уроки React JS](https://www.youtube.com/watch?v=UMw_hbNMIAA) - commponent - it's function, that return JSX code.
+07 [Уроки React JS](https://www.youtube.com/watch?v=UMw_hbNMIAA) - component - it's function, that return JSX code.
 
 Jeigu, return ir JSX kodas prasideda ta pačia eilute, galima nedėti neapskliausti JSX kodo
 
@@ -50,7 +50,7 @@ const App = () => {
   );
 }
 ```
-Komponento 'iškvietimas':
+Use component:
 ```
 <App />
 ```
@@ -58,9 +58,11 @@ Komponento 'iškvietimas':
 
 * import only what export other module
 
+* only one default export
+
 * export const Profile...
 
-* export default const Profile...
+* export default Profile...
 
 * import Profile from './profile - imports default export
 
@@ -71,5 +73,13 @@ Komponento 'iškvietimas':
 * import Profile form './../profile'
 
 09 [Уроки React JS](https://www.youtube.com/watch?v=VTr3pCutjxg) - import / export our component to modules
+
+10 [Уроки React JS](https://www.youtube.com/watch?v=TZUPCqfs8VU) - danger of auto import
+
+VS plugin for auto import module - auto import. If not working plugin after installation, need create new file with component and try use in JSX. 
+
+VS EN spell checker - Code Spell Checker
+
+11 [Уроки React JS (соц. сеть, шаг 1, вёрстка, grid)](https://www.youtube.com/watch?v=t6rAzhi3vjQ) - step1, design with grid
 
 [List all lessons](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8)
