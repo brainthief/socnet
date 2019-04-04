@@ -86,4 +86,6 @@ VS EN spell checker - Code Spell Checker
 
 * div - 'new row'
 
+12 [Уроки React JS (Разбивка на компоненты)](https://www.youtube.com/watch?v=00ZNuBIE-pM) - one component - one file
+
 [List all lessons](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8)
