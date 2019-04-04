@@ -13,8 +13,6 @@
 
 .appWrapper .header {
   grid-area: header;
-  background-image: url("/img/bg.jpg;");
-
 }
 
 .appWrapper .header img {
