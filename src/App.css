@@ -1,30 +1,78 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-style: 12px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
 .appWrapper {
+  background-image: url(./img/bgbig.jpeg);
+  background-size: cover;
   display: grid;
+  min-height: 100vh; 
 
   /* areas template */
   grid-template-areas:
     "header header""nav content";
   /* 2 rows - 60px and second 1 frakcija */
-  grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr 10fr;
+  grid-template-rows: 120px 1fr;
+  /* Two columns */
+  grid-template-columns: 120px 1fr;
   /* gap between elements */
   /* grid-gap: 10px; */
 }
 
 .appWrapper .header {
   grid-area: header;
+  height: 120px;
+  background-color: rgba(161, 239, 163, 0.6);
+  
+}
+
+.appWrapper .header .logo {
+  vertical-align: middle;
+  display: inline-block;
 }
 
 .appWrapper .header img {
-  width: 20px;
+  width: 120px;
+}
+
+.appWrapper .mainText {
+  display: inline-block;
+  font-size: 5em;
+  padding-left: 1em;
+  vertical-align: middle;
 }
 
 .appWrapper .nav {
   grid-area: nav;
-  background: #900;
+  text-align: center;
+  padding-bottom: 3px;
+  padding-top: 3px;
+  color: black;
+  background-color: rgba(256,256,256, 0.9);
 }
 
 .appWrapper .content {
   grid-area: content;
-  background: #090;
+}
+
+.appWrapper .content .contentText {
+  margin: 1em 1em;
+  padding: 1ex 1ex;
+  background-color: rgba(256,256,256, 0.9);
+  text-align: center;
+}
+
+@media only screen and (max-width: 1000px) {
+  .appWrapper .mainText {
+    font-size: 3em;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .appWrapper .mainText {
+    font-size: 2em;
+  }
 }

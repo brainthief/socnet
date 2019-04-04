@@ -1,11 +1,15 @@
 import React from 'react';
 import './App.css';
+import logo from './img/logo.png'
+import imgProfile from './img/colors.jpeg'
 
 const App = () => {
   return (
     <div className="appWrapper">
       <header className="header">
-        <img src="https://www.freelogodesign.org/Content/img/logo-ex-7.png" alt="logo" />
+        <div className="logo"><img src={logo} alt="logo" /></div>
+
+        <div className="mainText">SOCNET - Feel Free</div>
       </header>
       <nav className="nav">
         <div>Profile</div>
@@ -15,8 +19,17 @@ const App = () => {
         <div>Settings</div>
       </nav>
       <div className="content">
-        <h1>SOCNET</h1>
-        <p>Main content</p>
+        <div className="contentText">
+          <div><img src={imgProfile} alt='' /></div>
+          <div>avt + description</div>
+          <div>My posts
+            <div>New post
+              <div>post 1</div>
+              <div>post 2</div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   );
