@@ -110,6 +110,7 @@ VS EN spell checker - Code Spell Checker
 
 * user multi class -> className={\`${css.classOne} ${css.classTwo}\`}
 
-15. [Уроки React JS (структура папок, новые компоненты, улучшаем css)](https://www.youtube.com/watch?v=8VOuxijh9_s)
+
+15 [Уроки React JS (структура папок, новые компоненты, улучшаем css)](https://www.youtube.com/watch?v=8VOuxijh9_s)
 
 [List all lessons](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8)
