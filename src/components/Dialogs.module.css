@@ -1,0 +1,66 @@
+.content {
+ grid-area: content;
+}
+
+.contentText {
+ margin: 1em 1em;
+ padding: 1ex 1ex;
+ background-color: rgba(256, 256, 256, 0.9);
+ text-align: center;
+}
+
+/* Only 4 dialogs component */
+.dialogWrap {
+ display: grid;
+ /* areas template */
+ grid-template-areas: "peopleList messageList";
+ /* 2 rows - 60px and second 1 frakcija */
+ grid-template-rows: 1fr;
+ /* Two columns */
+ grid-template-columns: 1fr 11fr;
+ /* gap between elements */
+ grid-gap: 2em;
+ max-width: 800px;
+ padding: 2em 2em;
+}
+
+.peopleList {
+ grid-area: peopleList;
+}
+
+.messageList {
+ grid-area: messageList;
+}
+
+.msgMy {
+ display: grid;
+ grid-template-areas: "msg author";
+ grid-template-rows: 1fr;
+ grid-template-columns: 11fr 1fr;
+ background-color: rgba(256, 256, 256, 0.5);
+}
+
+.msgMy .msg {
+ text-align: right;
+}
+
+.msgOther .msg {
+ text-align: left;
+}
+
+.msgOther {
+ display: grid;
+ grid-template-areas: "author msg";
+ grid-template-rows: 1fr;
+ grid-template-columns: 2fr 10fr;
+ background-color: rgba(256, 256, 256, 0.8);
+}
+
+.msg {
+ grid-area: msg;
+}
+
+.author {
+ grid-area: author;
+ font-weight: bold;
+}

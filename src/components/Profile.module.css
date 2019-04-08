@@ -1,0 +1,20 @@
+.content {
+ grid-area: content;
+}
+
+.contentText {
+ margin: 1em 1em;
+ padding: 1ex 1ex;
+ background-color: rgba(256, 256, 256, 0.9);
+ text-align: center;
+}
+
+.profImg {
+ background: #000;
+ height: 200px;
+ width: auto;
+ background-image: url(./../img/colors.jpeg);
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+}
