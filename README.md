@@ -110,6 +110,10 @@ VS EN spell checker - Code Spell Checker
 
 * user multi class -> className={\`${css.classOne} ${css.classTwo}\`}
 
+```
+ <div className={`${css.item} ${css.active}`}>Message</div>
+ ```
+
 
 15 [Уроки React JS (структура папок, новые компоненты, улучшаем css)](https://www.youtube.com/watch?v=8VOuxijh9_s)
 
