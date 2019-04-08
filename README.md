@@ -117,4 +117,37 @@ VS EN spell checker - Code Spell Checker
 
 15 [Уроки React JS (структура папок, новые компоненты, улучшаем css)](https://www.youtube.com/watch?v=8VOuxijh9_s)
 
+16 [Уроки React JS (props - важнейшая тема) - react курсы бесплатно](https://www.youtube.com/watch?v=-mDs48HB3II&) - props
+
+ * every component get props (object with 'attributes'):
+
+```
+const Header = (props) => ...
+```
+
+* if no attributes -> <Header />. Props will be empty object
+
+```
+{
+  //empty object
+}
+```
+
+* if with attributes -> <Header name='Name'> -> component get props object with values
+
+```
+{
+  name: 'Name'
+}
+```
+use in component JSX
+
+```
+{props.name}
+```
+
+17 (Уроки React JS (остановочка "react за час, часть 1"))[https://www.youtube.com/watch?v=Ps2TiA5dIKc]
+
+17.x (Уроки React JS (инкубатор - теперь и онлайн))[https://www.youtube.com/watch?v=AVpodoajaAc] 
+
 [List all lessons](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8)
