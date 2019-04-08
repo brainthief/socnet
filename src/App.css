@@ -28,15 +28,9 @@ body {
     background-size: cover;
     display: grid;
     min-height: 100vh;
-
-    /* areas template */
     grid-template-areas:
       "header header""nav content";
-    /* 2 rows - 60px and second 1 frakcija */
     grid-template-rows: 50px 1fr;
-    /* Two columns */
     grid-template-columns: 120px 1fr;
-    /* gap between elements */
-    /* grid-gap: 10px; */
   }
 }
