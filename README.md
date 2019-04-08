@@ -88,4 +88,18 @@ VS EN spell checker - Code Spell Checker
 
 12 [Уроки React JS (Разбивка на компоненты)](https://www.youtube.com/watch?v=00ZNuBIE-pM) - one component - one file
 
+13 [Уроки React JS (git-репозиторий)](https://www.youtube.com/watch?v=6pAkynDPXEc) - GIT
+
+* gitk --all&  - open GUI for GIT
+
+* ctrl + insert - copy in GUI
+
+* shift + insert - paste 
+
+* git checkout commit-number - switch between commits
+
+(IT KAMASUTRA GIT repository)[https://github.com/it-kamasutra/react-way-of-samurai]
+
+14 [Уроки React JS (css-модули, css-modules)](https://www.youtube.com/watch?v=bQ3UPYFHyJ0) - CSS MODULES in ReactJS
+
 [List all lessons](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8)
