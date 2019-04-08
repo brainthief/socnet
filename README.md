@@ -102,12 +102,14 @@ VS EN spell checker - Code Spell Checker
 
 14 [Уроки React JS (css-модули, css-modules)](https://www.youtube.com/watch?v=bQ3UPYFHyJ0) - CSS MODULES in ReactJS
 
-* - file *.module.css
+* file *.module.css
 
-* - import in css -> import css from './file.module.css'
+* import in css -> import css from './file.module.css'
 
-* - user CSS -> classname={css.head}
+* user CSS -> className={css.head}
 
-* - user multi class -> classname={\`${css.classOne} ${css.classTwo}\`}
+* user multi class -> className={\`${css.classOne} ${css.classTwo}\`}
+
+15. [Уроки React JS (структура папок, новые компоненты, улучшаем css)](https://www.youtube.com/watch?v=8VOuxijh9_s)
 
 [List all lessons](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8)
