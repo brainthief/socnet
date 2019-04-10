@@ -152,8 +152,42 @@ use in component JSX
 
 18 (Уроки React JS (страница Dialogs) - react курсы бесплатно)[https://www.youtube.com/watch?v=IL1LTYDNAhk] - DialogsPage
 
+19 (Уроки React JS (route, browser-router, маршрутизация) - react курсы бесплатно)[https://www.youtube.com/watch?v=5X5ZLWdAnt4] - route, browser-route
 
+install route package to project
 
+```
+npm install react-router-dom
+```
+
+```
+yarn add react-router-dom
+```
+
+use in main component:
+```
+...
+import { BrowserRouter, Route } from "react-router-dom"
+...
+const App = (props) => {
+  const { profilePage, dialogPage } = props.state;
+  return (
+    <BrowserRouter>
+      <div className="appWrapper">
+        <Header />
+        <Navbar />
+        <div className='content'>
+          <Route path="/profile" component={Profile} />
+          <Route path="/dialogs" component={Dialogs} />
+          <Route path="/music" component={Music} />
+          <Route path="/news" component={News} />
+          <Route path="/settings" component={Settings} />
+        </div>
+      </div>
+    </BrowserRouter>
+  );
+}
+```
 
 
 [List all lessons](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8)
