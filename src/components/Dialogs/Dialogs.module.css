@@ -1,6 +1,4 @@
-.content {
- grid-area: content;
-}
+
 
 .contentText {
  margin: 1em 1em;
@@ -26,6 +24,10 @@
 
 .peopleList {
  grid-area: peopleList;
+}
+
+.active {
+ font-weight: bold;
 }
 
 .messageList {

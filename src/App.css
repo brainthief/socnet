@@ -22,6 +22,10 @@ body {
   /* grid-gap: 10px; */
 }
 
+.content {
+  grid-area: content;
+ }
+
 @media only screen and (max-width: 650px) {
   .appWrapper {
     background-image: url(./img/bgbig.jpeg);

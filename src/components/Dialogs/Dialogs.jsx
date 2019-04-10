@@ -8,7 +8,7 @@ const Dialogs = (props) => {
    <div className={css.contentText}>
     <div className={css.dialogWrap}>
      <div className={css.peopleList}>
-      <div>{userList[0]}</div>
+      <div className={css.active}>{userList[0]}</div>
       <div>{userList[1]}</div>
       <div>{userList[2]}</div>
       <div>{userList[3]}</div>

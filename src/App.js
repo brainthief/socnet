@@ -11,8 +11,11 @@ const App = (props) => {
     <div className="appWrapper">
       <Header />
       <Navbar />
-      {/* <Profile profilePage={profilePage} /> */}
-      <Dialogs dialogPage={dialogPage} />
+      <div className='content'>
+        {/* <Profile profilePage={profilePage} /> */}
+        <Dialogs dialogPage={dialogPage} />
+      </div>
+
     </div>
   );
 }
