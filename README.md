@@ -146,13 +146,13 @@ use in component JSX
 {props.name}
 ```
 
-17 (Уроки React JS (остановочка "react за час, часть 1"))[https://www.youtube.com/watch?v=Ps2TiA5dIKc]
+17 [Уроки React JS (остановочка "react за час, часть 1")](https://www.youtube.com/watch?v=Ps2TiA5dIKc)
 
-17.x (Уроки React JS (инкубатор - теперь и онлайн))[https://www.youtube.com/watch?v=AVpodoajaAc] 
+17.x [Уроки React JS (инкубатор - теперь и онлайн)](https://www.youtube.com/watch?v=AVpodoajaAc) 
 
-18 (Уроки React JS (страница Dialogs) - react курсы бесплатно)[https://www.youtube.com/watch?v=IL1LTYDNAhk] - DialogsPage
+18 [Уроки React JS (страница Dialogs) - react курсы бесплатно](https://www.youtube.com/watch?v=IL1LTYDNAhk) - DialogsPage
 
-19 (Уроки React JS (route, browser-router, маршрутизация) - react курсы бесплатно)[https://www.youtube.com/watch?v=5X5ZLWdAnt4] - route, browser-route
+19 [Уроки React JS (route, browser-router, маршрутизация) - react курсы бесплатно](https://www.youtube.com/watch?v=5X5ZLWdAnt4) - route, browser-route
 
 install route package to project
 
