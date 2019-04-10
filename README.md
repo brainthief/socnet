@@ -150,4 +150,6 @@ use in component JSX
 
 17.x (Уроки React JS (инкубатор - теперь и онлайн))[https://www.youtube.com/watch?v=AVpodoajaAc] 
 
+18 (Уроки React JS (страница Dialogs) - react курсы бесплатно)[https://www.youtube.com/watch?v=IL1LTYDNAhk] - DialogsPage
+
 [List all lessons](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8)
