@@ -2,13 +2,14 @@ import React from 'react'
 import css from './Profile.module.css'
 import MyPosts from "./MyPosts/MyPosts"
 
-const Profile = () => {
+const Profile = (props) => {
+ const profilePage = props.profilePage;
  return (
   <div className={css.content}>
    <div className={css.contentText}>
     <div className={css.profImg}></div>
     <div>avt + description</div>
-    <MyPosts />
+    <MyPosts profilePage={profilePage} />
    </div>
   </div >
  )

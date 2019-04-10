@@ -5,13 +5,14 @@ import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
 import Dialogs from './components/Dialogs/Dialogs';
 
-const App = () => {
+const App = (props) => {
+  const { profilePage, dialogPage } = props.state;
   return (
     <div className="appWrapper">
       <Header />
       <Navbar />
-      <Profile />
-      {/* <Dialogs /> */}
+      {/* <Profile profilePage={profilePage} /> */}
+      <Dialogs dialogPage={dialogPage} />
     </div>
   );
 }
