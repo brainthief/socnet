@@ -222,4 +222,10 @@ If need use different link for same Component:
 
 23. [Уроки React JS (props для Диалогов)](https://www.youtube.com/watch?v=DnRvj9A_1ps)
 
+24. [Уроки React JS (UI - BLL, выносим данные в сторону)](https://www.youtube.com/watch?v=M7wWqAsw_iE) - UI and BLL
+
+- UI - User Interface. Only draw components
+
+- BLL - Business Logic Layer. How to use props / data
+
 [List all lessons](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8)
