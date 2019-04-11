@@ -13,6 +13,11 @@
 
 }
 
+.item a {
+ text-decoration: none;
+ color: black;
+}
+
 
 
 .active {

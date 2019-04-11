@@ -2,65 +2,40 @@ import React from 'react'
 import css from './Dialogs.module.css'
 import { NavLink } from 'react-router-dom'
 
-const Dialogs = (props) => {
- // const { userList, chat } = props.dialogPage;
+const DialogItem = ({ name, id }) => {
+ return <div><NavLink to={'/dialogs/' + id} activeClassName={css.active} >{name} </NavLink></div>
+}
 
- const userList = ['Vytautas', 'Timas', 'Darius', 'Jonas', 'Kęstas']
- const chat = [
-  ['Me', 'Hi! How are you?'],
-  ['User 1', `It's ok. How are you?`],
-  ['Me', 'All right.'],
-  ['Me', 'How was your day'],
-  ['User 1', `All ok`],
-  ['User 1', `Work hard`],
-  ['User 1', `Came home`],
-  ['User 1', `Learning programing`],
- ];
+const Message = ({ author, msg, me }) => {
+ return <div className={me === 1 ? css.msgMy : css.msgOther}>
+  <div className={css.author}>{author}</div>
+  <div className={css.msg}>{msg}</div>
+ </div>
+}
+
+const Dialogs = (props) => {
+ const { userList, chat } = props.dialogPage;
  return (
   <div className={css.content}>
    <div className={css.contentText}>
     <div className={css.dialogWrap}>
      <div className={css.peopleList}>
-      <div><NavLink to='/dialogs/0' activeClassName={css.active} >{userList[0]} </NavLink></div>
-      <div><NavLink to='/dialogs/1' activeClassName={css.active} >{userList[1]} </NavLink></div>
-      <div><NavLink to='/dialogs/2' activeClassName={css.active} >{userList[2]} </NavLink></div>
-      <div><NavLink to='/dialogs/3' activeClassName={css.active} >{userList[3]} </NavLink></div>
-      <div><NavLink to='/dialogs/4' activeClassName={css.active} >{userList[4]} </NavLink></div>
-      <div><NavLink to='/dialogs/5' activeClassName={css.active} >{userList[5]} </NavLink></div>
+      <DialogItem name={userList[0]} id="0" />
+      <DialogItem name={userList[1]} id="1" />
+      <DialogItem name={userList[2]} id="2" />
+      <DialogItem name={userList[3]} id="3" />
+      <DialogItem name={userList[4]} id="4" />
+      <DialogItem name={userList[5]} id="5" />
      </div>
      <div className={css.messageList}>
-      <div className={css.msgMy}>
-       <div className={css.author}>{chat[0][0]}</div>
-       <div className={css.msg}>{chat[0][1]}</div>
-      </div>
-      <div className={css.msgOther}>
-       <div className={css.author}>{chat[1][0]}:</div>
-       <div className={css.msg}>{chat[1][1]}</div>
-      </div>
-      <div className={css.msgMy}>
-       <div className={css.author}>{chat[2][0]}</div>
-       <div className={css.msg}>{chat[2][1]}</div>
-      </div>
-      <div className={css.msgMy}>
-       <div className={css.author}>{chat[3][0]}</div>
-       <div className={css.msg}>{chat[3][1]}</div>
-      </div>
-      <div className={css.msgOther}>
-       <div className={css.author}>{chat[4][0]}:</div>
-       <div className={css.msg}>{chat[4][1]}</div>
-      </div>
-      <div className={css.msgOther}>
-       <div className={css.author}>{chat[5][0]}:</div>
-       <div className={css.msg}>{chat[5][1]}</div>
-      </div>
-      <div className={css.msgOther}>
-       <div className={css.author}>{chat[6][0]}:</div>
-       <div className={css.msg}>{chat[6][1]}</div>
-      </div>
-      <div className={css.msgOther}>
-       <div className={css.author}>{chat[7][0]}:</div>
-       <div className={css.msg}>{chat[7][1]}</div>
-      </div>
+      <Message author={chat[0][0]} msg={chat[0][1]} me="1" />
+      <Message author={chat[1][0]} msg={chat[1][1]} me="0" />
+      <Message author={chat[2][0]} msg={chat[2][1]} me="1" />
+      <Message author={chat[3][0]} msg={chat[3][1]} me="1" />
+      <Message author={chat[4][0]} msg={chat[4][1]} me="0" />
+      <Message author={chat[5][0]} msg={chat[5][1]} me="0" />
+      <Message author={chat[6][0]} msg={chat[6][1]} me="0" />
+      <Message author={chat[7][0]} msg={chat[7][1]} me="0" />
      </div>
     </div>
    </div>
