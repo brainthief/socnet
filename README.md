@@ -190,6 +190,34 @@ const App = (props) => {
 ```
 20. [Уроки React JS (NavLink) - react курсы бесплатно](https://www.youtube.com/watch?v=Wm62LRtxomk) -  NavLink 
 
+For navigation used NavLink component:
 
+```
+...
+import { NavLink } from 'react-router-dom'
+const Nav = () => {
+ return (
+  <nav className={css.nav}>
+   <div className={css.item}><NavLink to="/profile">Profile</NavLink></div>
+   <div className={css.item}><NavLink to="/dialogs">Message</NavLink></div>
+   ...
+  </nav>
+...
+```
+
+If need change 'active' link class:
+
+```
+<div className={css.item}><NavLink to="/profile" activeClassName={css.active}>Profile</NavLink></div>
+```
+
+21. [Уроки React JS (Верстаем страницу Диалогов) - react курсы бесплатно](https://www.youtube.com/watch?v=vcGrFNXy3zk) 
+
+22. [Уроки React JS (Route exact) - react курсы бесплатно](https://www.youtube.com/watch?v=HfGD5xRIiMU)
+
+If need use different link for same Component:
+```
+ <div><NavLink to='/dialogs/0' activeClassName={css.active} >{userList[0]} </NavLink></div>
+```
 
 [List all lessons](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8)
