@@ -8,28 +8,56 @@ const state = {
  profilePage: {
   title: 'My posts',
   comments: [
-   ['all ok ;)', '5'],
-   [':D', '0'],
-   [':)', '10'],
-   ['I am alone', '57'],
-   ['How are you', '17'],
-   [`Its 'my first post`, '7']
+   { id: "1", msg: 'all ok ;)', likeCount: '5' },
+   { id: "2", msg: ':D', likeCount: '0' },
+   { id: "3", msg: ':)', likeCount: '10' },
+   { id: "4", msg: 'I am alone', likeCount: '57' },
+   { id: "5", msg: 'How are you', likeCount: '17' },
+   { id: "6", msg: `Its 'my first post`, likeCount: '7' }
   ]
  },
  dialogPage: {
-  userList: ['User 1', 'User 2', 'User 3', 'User 4', 'User 5'],
+  userList: [
+   { id: '0', name: 'Vytas' },
+   { id: '1', name: 'Vytautas' },
+   { id: '2', name: 'Tomas' },
+   { id: '3', name: 'Darius' },
+   { id: '4', name: 'Kęstas' },
+   { id: '5', name: 'Julius' },
+  ],
   chat: [
-   ['Me', 'Hi! How are you?'],
-   ['User 1', `It's ok. How are you?`],
-   ['Me', 'All right.'],
-   ['Me', 'How was your day'],
-   ['User 1', `All ok`],
-   ['User 1', `Work hard`],
-   ['User 1', `Came home`],
-   ['User 1', `Learning programing`],
+   { id: "1", author: 'Me', msg: 'Hi! How are you?' },
+   { id: "2", author: 'User 1', msg: `It's ok. How are you?` },
+   { id: "3", author: 'Me', msg: 'All right.' },
+   { id: "4", author: 'Me', msg: 'How was your day' },
+   { id: "5", author: 'User 1', msg: `All ok` },
+   { id: "6", author: 'User 1', msg: `Work hard` },
+   { id: "7", author: 'User 1', msg: `Came home` },
+   { id: "8", author: 'User 1', msg: `Learning programing` },
   ]
  }
 }
+// chat: [
+//  ['Me', 'Hi! How are you?'],
+//  ['User 1', `It's ok. How are you?`],
+//  ['Me', 'All right.'],
+//  ['Me', 'How was your day'],
+//  ['User 1', `All ok`],
+//  ['User 1', `Work hard`],
+//  ['User 1', `Came home`],
+//  ['User 1', `Learning programing`],
+// ]
+
+// chat: [
+//  { author: 'Me', msg: 'Hi! How are you?' },
+// ]
+
+// { id: 0, name: 'Vytautas' },
+//    { id: 1, name: 'Vytas' },
+//    { id: 2, name: 'Tomas' },
+//    { id: 3, name: 'Darius' },
+//    { id: 4, name: 'Kęstas' },
+//    { id: 5, name: 'Tadas' }
 
 ReactDOM.render(<App state={state} />, document.getElementById('root'));
 

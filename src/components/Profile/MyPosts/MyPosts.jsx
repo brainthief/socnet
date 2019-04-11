@@ -11,12 +11,12 @@ const MyPosts = (props) => {
      <textarea></textarea>
      <button>Add posts</button>
     </div>
-    <Post message={comments[0][0]} like={comments[0][1]} />
-    <Post message={comments[1][0]} like={comments[1][1]} />
-    <Post message={comments[2][0]} like={comments[2][1]} />
-    <Post message={comments[3][0]} like={comments[3][1]} />
-    <Post message={comments[4][0]} like={comments[4][1]} />
-    <Post message={comments[5][0]} like={comments[5][1]} />
+    <Post message={comments[0].msg} like={comments[0].likeCount} />
+    <Post message={comments[1].msg} like={comments[1].likeCount} />
+    <Post message={comments[2].msg} like={comments[2].likeCount} />
+    <Post message={comments[3].msg} like={comments[3].likeCount} />
+    <Post message={comments[4].msg} like={comments[4].likeCount} />
+    <Post message={comments[5].msg} like={comments[5].likeCount} />
    </div>
   </div>
  )
