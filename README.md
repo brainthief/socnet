@@ -150,9 +150,9 @@ use in component JSX
 
 17.x [Уроки React JS (инкубатор - теперь и онлайн)](https://www.youtube.com/watch?v=AVpodoajaAc) 
 
-18 [Уроки React JS (страница Dialogs) - react курсы бесплатно](https://www.youtube.com/watch?v=IL1LTYDNAhk) - DialogsPage
+18 [Уроки React JS (страница Dialogs)](https://www.youtube.com/watch?v=IL1LTYDNAhk) - DialogsPage
 
-19 [Уроки React JS (route, browser-router, маршрутизация) - react курсы бесплатно](https://www.youtube.com/watch?v=5X5ZLWdAnt4) - route, browser-route
+19 [Уроки React JS (route, browser-router, маршрутизация)](https://www.youtube.com/watch?v=5X5ZLWdAnt4) - route, browser-route
 
 install route package to project
 
@@ -188,7 +188,7 @@ const App = (props) => {
   );
 }
 ```
-20. [Уроки React JS (NavLink) - react курсы бесплатно](https://www.youtube.com/watch?v=Wm62LRtxomk) -  NavLink 
+20. [Уроки React JS (NavLink)](https://www.youtube.com/watch?v=Wm62LRtxomk) -  NavLink 
 
 For navigation used NavLink component:
 
@@ -211,13 +211,15 @@ If need change 'active' link class:
 <div className={css.item}><NavLink to="/profile" activeClassName={css.active}>Profile</NavLink></div>
 ```
 
-21. [Уроки React JS (Верстаем страницу Диалогов) - react курсы бесплатно](https://www.youtube.com/watch?v=vcGrFNXy3zk) 
+21. [Уроки React JS (Верстаем страницу Диалогов)](https://www.youtube.com/watch?v=vcGrFNXy3zk) 
 
-22. [Уроки React JS (Route exact) - react курсы бесплатно](https://www.youtube.com/watch?v=HfGD5xRIiMU)
+22. [Уроки React JS (Route exact)](https://www.youtube.com/watch?v=HfGD5xRIiMU)
 
 If need use different link for same Component:
 ```
  <div><NavLink to='/dialogs/0' activeClassName={css.active} >{userList[0]} </NavLink></div>
 ```
+
+23. [Уроки React JS (props для Диалогов)](https://www.youtube.com/watch?v=DnRvj9A_1ps)
 
 [List all lessons](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8)
