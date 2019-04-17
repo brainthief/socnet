@@ -157,7 +157,7 @@ use in component JSX
 install route package to project
 
 ```
-npm install react-router-dom
+npm install --save react-router-dom
 ```
 
 ```
@@ -205,10 +205,31 @@ const Nav = () => {
 ...
 ```
 
+or Link component:
+
+```
+...
+import { Link } from 'react-router-dom'
+const Nav = () => {
+ return (
+  <nav className={css.nav}>
+   <div className={css.item}><Link to="/profile">Profile</Link></div>
+   <div className={css.item}><Link to="/dialogs">Message</Link></div>
+   ...
+  </nav>
+...
+```
+
 If need change 'active' link class:
 
 ```
 <div className={css.item}><NavLink to="/profile" activeClassName={css.active}>Profile</NavLink></div>
+```
+
+Exact - tells router do action only if '/' and nothing more
+
+```
+ <div className={css.item}><Link exact to="/">Profile</Link></div>
 ```
 
 21. [Уроки React JS (Верстаем страницу Диалогов)](https://www.youtube.com/watch?v=vcGrFNXy3zk) 
@@ -227,5 +248,15 @@ If need use different link for same Component:
 - UI - User Interface. Only draw components
 
 - BLL - Business Logic Layer. How to use props / data
+
+25. [Уроки React JS (метод массива - map)](https://www.youtube.com/watch?v=IG2I3j1vCfQ) - map method
+
+- const newArray - create destination array
+
+- const newArray = oldArray.map(rules) - from source array map method take every element and using rules create new array. 
+
+- const newArray = oldArray.map( (param1, param2, param3) => {} ) - param1 - every row of source array, param2 - index of every row, param3 - source array
+
+
 
 [List all lessons](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8)
