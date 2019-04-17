@@ -11,12 +11,7 @@ const MyPosts = (props) => {
      <textarea></textarea>
      <button>Add posts</button>
     </div>
-    <Post message={comments[0].msg} like={comments[0].likeCount} />
-    <Post message={comments[1].msg} like={comments[1].likeCount} />
-    <Post message={comments[2].msg} like={comments[2].likeCount} />
-    <Post message={comments[3].msg} like={comments[3].likeCount} />
-    <Post message={comments[4].msg} like={comments[4].likeCount} />
-    <Post message={comments[5].msg} like={comments[5].likeCount} />
+    {comments.map(el => <Post message={el.msg} like={el.likeCount} />)}
    </div>
   </div>
  )
