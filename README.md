@@ -261,9 +261,7 @@ If need use different link for same Component:
 
 ![app structure](https://github.com/brainthief/socnet/blob/master/forgit/026.JPG)
 
-
 SPA - single page application
-
 
 **UI BLL DAL** - main code parts
 
@@ -272,6 +270,15 @@ SPA - single page application
 * **UI** - User Interface. React responsible for UI. Gets data from BLL and rendering.
 
 ![BLL and UI data flow](https://github.com/brainthief/socnet/blob/master/forgit/0262.JPG)
+
+27. [Уроки React JS (component vs render, прокидываем props через Route)](https://www.youtube.com/watch?v=wNWKFyh34r0)
+
+Migrate data over rout component:
+
+```
+<Route path="/profile" render=( () => <Profile posts={prop.posts}>) />
+
+```
 
 
 SOLID:
