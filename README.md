@@ -261,7 +261,7 @@ If need use different link for same Component:
 
 ![app structure](https://github.com/brainthief/socnet/blob/master/forgit/026.JPG)
 
-SPA - single page application
+SPA - single page application. 
 
 **UI BLL DAL** - main code parts
 
@@ -285,6 +285,33 @@ Migrate data over rout component:
 29. [Уроки React JS (упаковываем данные в state)](https://www.youtube.com/watch?v=GW5PwlzXBDc) - state moved to separate file
 
 ![app structure](https://github.com/brainthief/socnet/blob/master/forgit/0294.JPG)
+
+30. [0. Уроки React JS (остановочка "react за час, часть 2")](https://www.youtube.com/watch?v=5js6RxcmxOA)
+
+- functional component -> presentation , stateless, dumb component. Return JS content
+
+-----------------------------------------------------
+```
+yarn add prop-types
+```
+
+usage:
+
+```
+...
+import PropTypes from 'prop-types'
+
+const Message = ({ author, msg, me }) => {
+...
+}
+
+Message.propTypes = {
+ author: PropTypes.string,
+ msg: PropTypes.string,
+ me: PropTypes.string
+}
+```
+
 
 SOLID:
 

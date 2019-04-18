@@ -11,7 +11,7 @@ const MyPosts = (props) => {
      <textarea></textarea>
      <button>Add posts</button>
     </div>
-    {comments.map(el => <Post message={el.msg} like={el.likeCount} />)}
+    {comments.map(el => <Post key={el.id} message={el.msg} like={el.likeCount} />)}
    </div>
   </div>
  )

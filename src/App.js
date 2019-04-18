@@ -9,6 +9,7 @@ import News from './components/News/News'
 import Settings from './components/Settings/Settings'
 import { BrowserRouter, Route } from "react-router-dom"
 
+
 const App = (props) => {
   const { profilePage, dialogPage } = props.state;
   return (
@@ -29,3 +30,4 @@ const App = (props) => {
 }
 
 export default App;
+
