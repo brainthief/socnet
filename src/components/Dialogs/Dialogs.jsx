@@ -1,17 +1,12 @@
 import React from 'react'
 import css from './Dialogs.module.css'
 import { NavLink } from 'react-router-dom'
+import Message from './Message/Message'
 
 const DialogItem = ({ name, id }) => {
  return <div><NavLink to={'/dialogs/' + id} activeClassName={css.active} >{name} </NavLink></div>
 }
 
-const Message = ({ author, msg, me }) => {
- return <div className={me === '1' ? css.msgMy : css.msgOther}>
-  <div className={css.author}>{author}</div>
-  <div className={css.msg}>{msg}</div>
- </div>
-}
 
 const Dialogs = (props) => {
  const { userList, chat } = props.dialogPage;

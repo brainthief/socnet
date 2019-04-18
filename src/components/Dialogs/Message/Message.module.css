@@ -1,0 +1,32 @@
+.msgMy {
+ display: grid;
+ grid-template-areas: "msg author";
+ grid-template-rows: 1fr;
+ grid-template-columns: 11fr 1fr;
+ background-color: rgba(256, 256, 256, 0.5);
+}
+
+.msgMy .msg {
+ text-align: right;
+}
+
+.msgOther .msg {
+ text-align: left;
+}
+
+.msgOther {
+ display: grid;
+ grid-template-areas: "author msg";
+ grid-template-rows: 1fr;
+ grid-template-columns: 2fr 10fr;
+ background-color: rgba(256, 256, 256, 0.8);
+}
+
+.msg {
+ grid-area: msg;
+}
+
+.author {
+ grid-area: author;
+ font-weight: bold;
+}
