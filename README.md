@@ -257,6 +257,18 @@ If need use different link for same Component:
 
 - const newArray = oldArray.map( (param1, param2, param3) => {} ) - param1 - every row of source array, param2 - index of every row, param3 - source array
 
+26. [Уроки React JS (структура проекта, ещё раз про ui - bll)](https://www.youtube.com/watch?v=9ic9dq7FLaM) 
 
+![app structure](https://github.com/brainthief/socnet/blob/master/forgit/026.JPG)
+
+SPA - single page application
+
+UI BLL DAL - main code parts
+
+React responsible for UI
+
+SOLID:
+
+S - every function / component / element / system is qualitatively responsible for one job
 
 [List all lessons](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8)
