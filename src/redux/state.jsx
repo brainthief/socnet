@@ -29,5 +29,12 @@ export const state = {
    { id: "7", author: 'User 1', msg: `Came home`, me: "0" },
    { id: "8", author: 'User 1', msg: `Learning programing`, me: "0" },
   ]
+ },
+ sideBar: {
+  friends: [
+   { id: 0, name: "Vaida", imgUrl: "..." },
+   { id: 1, name: "Viltė", imgUrl: "..." },
+   { id: 2, name: "Vinksė", imgUrl: "..." }
+  ]
  }
 }
