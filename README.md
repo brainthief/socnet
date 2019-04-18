@@ -58,29 +58,29 @@ Use component:
 ```
 08 [Уроки React JS](https://www.youtube.com/watch?v=lXpPS4wKDfE) - import / export
 
-* import only what export other module
+* **import** only what **export** other module
 
-* only one default export
+* only **one** default export
 
-* export const Profile...
+* **export const Profile**...
 
-* export default Profile...
+* **export default Profile**...
 
-* import Profile from './profile - imports default export
+* **import Profile from './profile** - imports default export
 
-* import React from 'react' - import from node modules
+* **import React from 'react'** - import from node modules
 
-* import {Profile} from './profile' - import not default export
+* **import {Profile} from './profile'** - import not default export
 
-* import Profile form './../profile'
+* **import Profile form './../profile'**
 
 09 [Уроки React JS](https://www.youtube.com/watch?v=VTr3pCutjxg) - import / export our component to modules
 
 10 [Уроки React JS](https://www.youtube.com/watch?v=TZUPCqfs8VU) - danger of auto import
 
-VS plugin for auto import module - auto import. If not working plugin after installation, need create new file with component and try use in JSX. 
+VS plugin for auto import module - **auto import**. If not working plugin after installation, need create new file with component and try use in JSX. 
 
-VS EN spell checker - Code Spell Checker
+VS EN spell checker - **Code Spell Checker**
 
 11 [Уроки React JS (соц. сеть, шаг 1, вёрстка, grid)](https://www.youtube.com/watch?v=t6rAzhi3vjQ) - step1, design with grid
 
@@ -90,25 +90,25 @@ VS EN spell checker - Code Spell Checker
 
 13 [Уроки React JS (git-репозиторий)](https://www.youtube.com/watch?v=6pAkynDPXEc) - GIT
 
-* gitk --all&  - open GUI for GIT
+* **gitk --all&**  - open GUI for GIT
 
-* ctrl + insert - copy in GUI
+* **ctrl + insert** - copy in GUI
 
-* shift + insert - paste 
+* **shift + insert** - paste 
 
-* git checkout commit-number - switch between commits
+* **git checkout commit-number** - switch between commits
 
 (IT KAMASUTRA GIT repository)[https://github.com/it-kamasutra/react-way-of-samurai]
 
 14 [Уроки React JS (css-модули, css-modules)](https://www.youtube.com/watch?v=bQ3UPYFHyJ0) - CSS MODULES in ReactJS
 
-* file *.module.css
+* file __*.module.css__
 
-* import in css -> import css from './file.module.css'
+* import in css -> **import css from './file.module.css'**
 
-* user CSS -> className={css.head}
+* use CSS -> **className={css.head}**
 
-* user multi class -> className={\`${css.classOne} ${css.classTwo}\`}
+* use multi class -> **className={\`${css.classOne} ${css.classTwo}\`}**
 
 ```
  <div className={`${css.item} ${css.active}`}>Message</div>
@@ -119,7 +119,7 @@ VS EN spell checker - Code Spell Checker
 
 16 [Уроки React JS (props - важнейшая тема) - react курсы бесплатно](https://www.youtube.com/watch?v=-mDs48HB3II&) - props
 
- * every component get props (object with 'attributes'):
+ * every component get **props** (object with 'attributes'):
 
 ```
 const Header = (props) => ...
@@ -133,7 +133,7 @@ const Header = (props) => ...
 }
 ```
 
-* if with attributes -> <Header name='Name'> -> component get props object with values
+* if with attributes -> <Header **name='Name'**> -> component get props object with values
 
 ```
 {
@@ -245,30 +245,37 @@ If need use different link for same Component:
 
 24. [Уроки React JS (UI - BLL, выносим данные в сторону)](https://www.youtube.com/watch?v=M7wWqAsw_iE) - UI and BLL
 
-- UI - User Interface. Only draw components
+- **UI - User Interface**. Only draw components
 
-- BLL - Business Logic Layer. How to use props / data
+- **BLL - Business Logic Layer**. How to use props / data
 
 25. [Уроки React JS (метод массива - map)](https://www.youtube.com/watch?v=IG2I3j1vCfQ) - map method
 
-- const newArray - create destination array
+- **const newArray** - create destination array
 
-- const newArray = oldArray.map(rules) - from source array map method take every element and using rules create new array. 
+- **const newArray = oldArray.map(rules)** - from source array map method take every element and using rules create new array. 
 
-- const newArray = oldArray.map( (param1, param2, param3) => {} ) - param1 - every row of source array, param2 - index of every row, param3 - source array
+- **const newArray = oldArray.map( (param1, param2, param3) => {} )** - param1 - every row of source array, param2 - index of every row, param3 - source array
 
 26. [Уроки React JS (структура проекта, ещё раз про ui - bll)](https://www.youtube.com/watch?v=9ic9dq7FLaM) 
 
 ![app structure](https://github.com/brainthief/socnet/blob/master/forgit/026.JPG)
 
+
 SPA - single page application
 
-UI BLL DAL - main code parts
 
-React responsible for UI
+**UI BLL DAL** - main code parts
+
+* **BLL** - Business Logic Layer. Redux responsible for BLL. Store data. Gets data from server and send to UL.
+
+* **UI** - User Interface. React responsible for UI. Gets data from BLL and rendering.
+
+![BLL and UI data flow](https://github.com/brainthief/socnet/blob/master/forgit/0261.JPG)
+
 
 SOLID:
 
-S - every function / component / element / system is qualitatively responsible for one job
+**S** - every function / component / element / system is qualitatively responsible for one job
 
 [List all lessons](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8)
