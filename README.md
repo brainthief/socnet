@@ -280,9 +280,16 @@ Migrate data over rout component:
 
 ```
 
+28. [Уроки React JS (выносим данные в index.js)](https://www.youtube.com/watch?v=BygaoztCh94)
+
+29. [Уроки React JS (упаковываем данные в state)](https://www.youtube.com/watch?v=GW5PwlzXBDc) - state moved to separate file
+
+![app structure](https://github.com/brainthief/socnet/blob/master/forgit/0294.JPG)
 
 SOLID:
 
 **S** - every function / component / element / system is qualitatively responsible for one job
 
 [List all lessons](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8)
+
+in debugger mode can get variables in console
