@@ -271,7 +271,7 @@ SPA - single page application
 
 * **UI** - User Interface. React responsible for UI. Gets data from BLL and rendering.
 
-![BLL and UI data flow](https://github.com/brainthief/socnet/blob/master/forgit/0261.JPG)
+![BLL and UI data flow](https://github.com/brainthief/socnet/blob/master/forgit/0262.JPG)
 
 
 SOLID:
