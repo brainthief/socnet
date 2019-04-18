@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 
 const ProfileInfo = (props) => {
  const { link } = props
@@ -14,6 +14,6 @@ const ProfileInfo = (props) => {
 
 export default ProfileInfo
 
-ProfileInfo.propTypes = {
- link: PropTypes.string
-}
+// ProfileInfo.propTypes = {
+//  link: PropTypes.string
+// }

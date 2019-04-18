@@ -1,12 +1,10 @@
 import React from 'react'
 import css from './Dialogs.module.css'
-import { NavLink } from 'react-router-dom'
+import DialogItem from './DialogItem/DialogItem'
 import Message from './Message/Message'
-import PropTypes from 'prop-types'
 
-const DialogItem = ({ name, id }) => {
- return <div><NavLink to={'/dialogs/' + id} activeClassName={css.active} >{name} </NavLink></div>
-}
+
+
 
 
 const Dialogs = (props) => {
@@ -29,8 +27,3 @@ const Dialogs = (props) => {
 }
 
 export default Dialogs
-
-Dialogs.propTypes = {
- userList: PropTypes.array,
- chat: PropTypes.array
-}

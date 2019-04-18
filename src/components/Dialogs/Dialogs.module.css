@@ -33,10 +33,6 @@
  color: black;
 }
 
-.active {
- font-weight: bold;
-}
-
 .messageList {
  grid-area: messageList;
 

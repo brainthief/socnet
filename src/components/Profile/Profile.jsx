@@ -2,7 +2,6 @@ import React from 'react'
 import css from './Profile.module.css'
 import MyPosts from "./MyPosts/MyPosts"
 import ProfileInfo from "./ProfileInfo/ProfileInfo"
-import PropTypes from 'prop-types'
 
 const Profile = (props) => {
  const { profilePage } = props;
@@ -19,6 +18,3 @@ const Profile = (props) => {
 
 export default Profile
 
-Profile.propTypes = {
- profilePage: PropTypes.object,
-};
