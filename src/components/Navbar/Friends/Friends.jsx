@@ -1,5 +1,6 @@
 import React from 'react'
 import FriendItem from './FriendItem/FriendItem'
+import css from './Friends.module.css'
 
 const Friends = (props) => {
 
@@ -7,8 +8,8 @@ const Friends = (props) => {
  const { friends } = props
 
  return (
-  <div>
-   {friends.map((el) => <FriendItem friend={el} />)}
+  <div className={css.container}>
+   {friends.map((el) => <FriendItem key={el.id} friend={el} />)}
   </div>
  )
 }

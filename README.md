@@ -286,7 +286,7 @@ Migrate data over rout component:
 
 ![app structure](https://github.com/brainthief/socnet/blob/master/forgit/0294.JPG)
 
-30. [0. Уроки React JS (остановочка "react за час, часть 2")](https://www.youtube.com/watch?v=5js6RxcmxOA)
+30. [Уроки React JS (остановочка "react за час, часть 2")](https://www.youtube.com/watch?v=5js6RxcmxOA)
 
 - functional component -> presentation , stateless, dumb component. Return JS content
 
@@ -311,6 +311,14 @@ Message.propTypes = {
  me: PropTypes.string
 }
 ```
+In last component
+
+-----------------------------------------------------
+Add img:
+
+<img className={css.img} src={require(`./../../../../img/avatars/${imgUrl}`)} alt={name} />
+
+-----------------------------------------------------
 
 
 SOLID:

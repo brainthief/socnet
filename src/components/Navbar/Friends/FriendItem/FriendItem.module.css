@@ -1,0 +1,12 @@
+.item {
+ font-size: 10px;
+}
+
+.img {
+ display: block;
+ width: 30px;
+ height: 30px;
+ border-radius: 15px;
+ /* vertical-align: middle; */
+ display: inline-block;
+}

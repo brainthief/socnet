@@ -32,9 +32,13 @@ export const state = {
  },
  sideBar: {
   friends: [
-   { id: 0, name: "Vaida", imgUrl: "..." },
-   { id: 1, name: "Viltė", imgUrl: "..." },
-   { id: 2, name: "Vinksė", imgUrl: "..." }
+   { id: 0, name: "Vaida", imgUrl: "vaida.JPG" },
+   { id: 1, name: "Viltė", imgUrl: "vilte.JPG" },
+   { id: 2, name: "Vinksė", imgUrl: "vinkse.JPG" },
+   { id: 4, name: "Vaida", imgUrl: "vaida.JPG" },
+   { id: 5, name: "Viltė", imgUrl: "vilte.JPG" },
+   { id: 6, name: "Vinksė", imgUrl: "vinkse.JPG" },
+   { id: 7, name: "Vaida", imgUrl: "vaida.JPG" }
   ]
  }
 }
