@@ -314,13 +314,63 @@ Message.propTypes = {
 In last component
 
 -----------------------------------------------------
+
 Add img:
 
+```
 <img className={css.img} src={require(`./../../../../img/avatars/${imgUrl}`)} alt={name} />
+```
 
 -----------------------------------------------------
+Render after change 'state' in functional react programing
 
+```
+const changeTextArea = (e) => {
+ ...
+ renderEntirePage();
+}
 
+const renderEntirePage = () => {
+ ReactDOM.render(<App changeTextArea={changeTextArea} />, document.getElementById('root'));
+}
+
+renderEntirePage();
+```
+-----------------------------------------------------
+Callback
+
+```
+const MyPosts = (props) => {
+ const { comments, title, newComment } = props.profilePage
+ return (
+  <div className={css.myPosts}><div className={css.title}>{title}</div>
+   <div> New post
+    <div>
+     <textarea onChange={(e) => { props.changeTextArea(e) }} value={newComment}></textarea>
+     <button onClick={() => { props.addNewPost() }} disabled={newComment.length <= 0 ? true : false}>Add posts</button>
+    </div>
+    {comments.map((el, index) => <Post key={index} message={el.msg} like={el.likeCount} />)}
+   </div>
+  </div>
+ )
+}
+```
+Copy, modify and replace. Render
+```
+const addNewPost = () => {
+ state.profilePage.comments = [{ msg: state.profilePage.newComment, likeCount: '0' }, ...state.profilePage.comments]
+ state.profilePage.newComment = ''
+ renderEntirePage();
+}
+```
+Action, update, render
+```
+const changeTextArea = (e) => {
+ state.profilePage.newComment = e.target.value
+ renderEntirePage();
+}
+```
+-----------------------------------------------------
 SOLID:
 
 **S** - every function / component / element / system is qualitatively responsible for one job

@@ -2,13 +2,14 @@ export const state = {
  profilePage: {
   title: 'My posts',
   comments: [
-   { id: "1", msg: 'all ok ;)', likeCount: '5' },
-   { id: "2", msg: ':D', likeCount: '0' },
-   { id: "3", msg: ':)', likeCount: '10' },
-   { id: "4", msg: 'I am alone', likeCount: '57' },
-   { id: "5", msg: 'How are you', likeCount: '17' },
-   { id: "6", msg: `Its 'my first post`, likeCount: '7' }
-  ]
+   { msg: 'all ok ;)', likeCount: '5' },
+   { msg: ':D', likeCount: '0' },
+   { msg: ':)', likeCount: '10' },
+   { msg: 'I am alone', likeCount: '57' },
+   { msg: 'How are you', likeCount: '17' },
+   { msg: `Its 'my first post`, likeCount: '7' }
+  ],
+  newComment: ""
  },
  dialogPage: {
   userList: [
@@ -35,10 +36,6 @@ export const state = {
    { id: 0, name: "Vaida", imgUrl: "vaida.JPG" },
    { id: 1, name: "Viltė", imgUrl: "vilte.JPG" },
    { id: 2, name: "Vinksė", imgUrl: "vinkse.JPG" },
-   { id: 4, name: "Vaida", imgUrl: "vaida.JPG" },
-   { id: 5, name: "Viltė", imgUrl: "vilte.JPG" },
-   { id: 6, name: "Vinksė", imgUrl: "vinkse.JPG" },
-   { id: 7, name: "Vaida", imgUrl: "vaida.JPG" }
   ]
  }
 }

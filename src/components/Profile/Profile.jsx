@@ -10,7 +10,7 @@ const Profile = (props) => {
   <div className={css.content}>
    <div className={css.contentText}>
     <ProfileInfo link={css.profImg} />
-    <MyPosts profilePage={profilePage} />
+    <MyPosts profilePage={profilePage} addNewPost={props.addNewPost} changeTextArea={props.changeTextArea} />
    </div>
   </div >
  )

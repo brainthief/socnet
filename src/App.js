@@ -18,7 +18,7 @@ const App = (props) => {
         <Header />
         <Navbar sideBar={sideBar} />
         <div className='content'>
-          <Route exact path="/profile" render={() => <Profile profilePage={profilePage} />} />
+          <Route exact path="/profile" render={() => <Profile profilePage={profilePage} addNewPost={props.addNewPost} changeTextArea={props.changeTextArea} />} />
           <Route path="/dialogs" render={() => <Dialogs dialogPage={dialogPage} />} />
           <Route exact path="/music" component={Music} />
           <Route exact path="/news" component={News} />
