@@ -9,9 +9,13 @@ const MyPosts = (props) => {
    <div> New post
     <div>
      <textarea onChange={(e) => { props.changeTextArea(e) }} value={newComment}></textarea>
+    </div>
+    <div>
      <button onClick={() => { props.addNewPost() }} disabled={newComment.length <= 0 ? true : false}>Add posts</button>
     </div>
-    {comments.map((el, index) => <Post key={index} message={el.msg} like={el.likeCount} />)}
+    <div className={css.comments}>
+     {comments.map((el, index) => <Post key={index} message={el.msg} like={el.likeCount} />)}
+    </div>
    </div>
   </div>
  )
