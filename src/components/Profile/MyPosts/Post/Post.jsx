@@ -19,5 +19,6 @@ const Post = (props) => {
 export default Post
 
 Post.propTypes = {
-  message: PropTypes.string
+  message: PropTypes.string,
+  like: PropTypes.string
 }
