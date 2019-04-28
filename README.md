@@ -290,6 +290,51 @@ Migrate data over rout component:
 
 - functional component -> presentation , stateless, dumb component. Return JS content
 
+31. [31. Уроки React JS - onClick, ref, VirtualDOM](https://www.youtube.com/watch?v=VkHcOHWSaNQ)
+
+Event action:
+
+```
+<button onCLick={ () => { alert('action') } }>send</button>
+```
+
+Wrong way (function will run after rendering):
+
+```
+<button onCLick={ alert('action') }>send</button>
+```
+
+Giving link (function is object - have links)(without "()" ):
+
+```
+<button onCLick={ myFunction }>send</button>
+```
+
+------------------------------
+
+Bad practice is to work with DOM without ReactJS crated VirtualDOM (Ref or native JS like getElementById).
+- Create link 
+
+```
+let newPostElement = React.createRef()
+```
+
+- Show witch element it will be
+
+```
+<textarea ref={newPostElement}></textarea>
+```
+
+- Use value of ref element
+
+```
+let text = newPostElement.current.value
+```
+
+32. [Уроки React JS - прокидываем callback через props](https://www.youtube.com/watch?v=OtMEWJ-3d18)
+
+
+
 -----------------------------------------------------
 ```
 yarn add prop-types
