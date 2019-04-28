@@ -39,3 +39,23 @@ export const state = {
   ]
  }
 }
+
+let render = () => { }
+
+export const setRender = (job) => {
+ render = job
+}
+
+export const addNewPost = () => {
+ state.profilePage.comments = [{ msg: state.profilePage.newComment, likeCount: '0' }, ...state.profilePage.comments]
+ state.profilePage.newComment = ''
+ render();
+}
+
+
+export const changeTextArea = (e) => {
+ state.profilePage.newComment = e.target.value
+ render();
+}
+
+export default state
