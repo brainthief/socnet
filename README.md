@@ -362,11 +362,11 @@ Inside component:
 
 cannot be bidirectional import:
 
-![bidirectional import](https://github.com/brainthief/socnet/blob/master/forgit/0331.JPG)
+![bidirectional import](https://github.com/brainthief/socnet/blob/master/forgit/0331.jpg)
 
 using third file for solving problem:
 
-![app structure](https://github.com/brainthief/socnet/blob/master/forgit/0332.JPG)
+![app structure](https://github.com/brainthief/socnet/blob/master/forgit/0332.jpg)
 
 * index.js:
 
@@ -397,7 +397,7 @@ export const renderEntirePage = (state) => {
 }
 ```
 
-![flux concept](https://github.com/brainthief/socnet/blob/master/forgit/0333.JPG)
+![flux concept](https://github.com/brainthief/socnet/blob/master/forgit/0333.jpg)
 
 -----------------------------------------------------
 ```
