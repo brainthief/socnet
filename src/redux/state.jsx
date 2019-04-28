@@ -29,7 +29,8 @@ export const state = {
    { id: "6", author: 'User 1', msg: `Work hard`, me: "0" },
    { id: "7", author: 'User 1', msg: `Came home`, me: "0" },
    { id: "8", author: 'User 1', msg: `Learning programing`, me: "0" },
-  ]
+  ],
+  newMessage: ""
  },
  sideBar: {
   friends: [
@@ -52,9 +53,19 @@ export const addNewPost = () => {
  render();
 }
 
-
 export const changeTextArea = (e) => {
  state.profilePage.newComment = e.target.value
+ render();
+}
+
+export const changeMessageTextArea = (e) => {
+ state.dialogPage.newMessage = e.target.value
+ render();
+}
+
+export const addNewMessage = () => {
+ state.dialogPage.chat = [...state.dialogPage.chat, { id: state.dialogPage.chat.length + 1, author: 'Me', msg: state.dialogPage.newMessage, me: "1" }]
+ state.dialogPage.newMessage = ''
  render();
 }
 

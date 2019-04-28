@@ -8,10 +8,10 @@ const MyPosts = (props) => {
   <div className={css.myPosts}><div className={css.title}>{title}</div>
    <div> New post
     <div>
-     <textarea onChange={(e) => { props.changeTextArea(e) }} value={newComment}></textarea>
+     <textarea className={css.textarea} rows="1" onChange={(e) => { props.changeTextArea(e) }} value={newComment}></textarea>
     </div>
     <div>
-     <button onClick={() => { props.addNewPost() }} disabled={newComment.length <= 0 ? true : false}>Add posts</button>
+     <button className={css.button} onClick={() => { props.addNewPost() }} disabled={newComment.length <= 0 ? true : false}>Add posts</button>
     </div>
     <div className={css.comments}>
      {comments.map((el, index) => <Post key={index} message={el.msg} like={el.likeCount} />)}

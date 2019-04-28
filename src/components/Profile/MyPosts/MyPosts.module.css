@@ -11,3 +11,22 @@
 .comments {
  padding-top: 2em;
 }
+
+.textarea {
+ width: 95%;
+ border: 3px solid #555;
+  border-radius: 2px;
+  font-size: 1.5em;
+}
+
+.button {
+ background-color: white;
+ color: black;
+ border: 3px solid #555;
+ border-radius: 2px;
+ font-size: 1em;
+}
+
+.button:hover {background-color: #e7e7e7;}
+
+.button:disabled {color:#e7e7e7;}

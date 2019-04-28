@@ -3,10 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import state, { setRender, addNewPost, changeTextArea } from './redux/state.jsx';
+import state, { setRender, addNewPost, changeTextArea, changeMessageTextArea, addNewMessage } from './redux/state.jsx';
 
 const renderEntirePage = () => {
- ReactDOM.render(<App state={state} addNewPost={addNewPost} changeTextArea={changeTextArea} />, document.getElementById('root'));
+ ReactDOM.render(<App
+  state={state}
+  addNewPost={addNewPost}
+  changeTextArea={changeTextArea}
+  changeMessageTextArea={changeMessageTextArea}
+  addNewMessage={addNewMessage}
+ />, document.getElementById('root'));
 }
 
 setRender(renderEntirePage)
