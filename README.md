@@ -333,7 +333,71 @@ let text = newPostElement.current.value
 
 32. [Уроки React JS - прокидываем callback через props](https://www.youtube.com/watch?v=OtMEWJ-3d18)
 
+- Creating function
 
+```
+export let myFunction = (text) => {
+  newObject = {
+    id : 5,
+    message : text
+  }
+  state.myArray.push(newObject) //not best way!!
+}
+```
+- Sending function link via props to component
+
+```
+<Component myFunction={myFunction} />
+```
+
+Inside component:
+```
+...
+{myFunction} = props
+...
+<button onClick={()=>{myFunction()}}>send</button>
+```
+
+33. [Уроки React JS - добавление поста на стену (зачатки FLUX-концепции)](https://www.youtube.com/watch?v=H6EEnnLvFYo)
+
+cannot be bidirectional import:
+
+![bidirectional import](https://github.com/brainthief/socnet/blob/master/forgit/0331.JPG)
+
+using third file for solving problem:
+
+![app structure](https://github.com/brainthief/socnet/blob/master/forgit/0332.JPG)
+
+* index.js:
+
+```
+...
+import state from './state.js
+import {renderEntireTree} from './render.js'
+...
+renderEntireTree(state)
+```
+
+* state.js:
+```
+import {renderEntireTree} from './render.js'
+...
+export addPost = (text) => {
+  ...
+  renderEntireTree(state)
+}
+```
+
+* render.js
+
+```
+import state from 'state
+export const renderEntirePage = (state) => {
+ ReactDOM.render(<App state={state} addNewPost={addNewPost} changeTextArea={changeTextArea} />, document.getElementById('root'));
+}
+```
+
+![flux concept](https://github.com/brainthief/socnet/blob/master/forgit/0333.JPG)
 
 -----------------------------------------------------
 ```
