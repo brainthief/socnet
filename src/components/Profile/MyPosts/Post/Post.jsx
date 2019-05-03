@@ -20,5 +20,8 @@ export default Post
 
 Post.propTypes = {
   message: PropTypes.string,
-  like: PropTypes.number
+  like: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]),
 }

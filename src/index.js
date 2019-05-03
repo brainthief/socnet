@@ -3,17 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import store, { addNewPost, changeTextArea, changeMessageTextArea, addNewMessage } from './redux/state.jsx';
+import store from './redux/state.jsx';
 const state = store.getState()
 
 const renderEntirePage = () => {
  ReactDOM.render(<App
   state={state}
   dispatch={store.dispatch.bind(store)}
-  addNewPost={addNewPost}
-  changeTextArea={changeTextArea}
-  changeMessageTextArea={changeMessageTextArea}
-  addNewMessage={addNewMessage}
  />, document.getElementById('root'));
 }
 

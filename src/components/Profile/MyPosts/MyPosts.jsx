@@ -9,10 +9,10 @@ const MyPosts = (props) => {
   <div className={css.myPosts}><div className={css.title}>{title}</div>
    <div> New post
     <div>
-     <textarea className={css.textarea} rows="1" onChange={(e) => { props.changeTextArea(e) }} value={newComment}></textarea>
+     <textarea className={css.textarea} rows="1" onChange={(e) => { dispatch({ type: "UPDATE_TEXT", value: e.target.value }) }} value={newComment}></textarea>
     </div>
     <div>
-     <button className={css.button} onClick={() => { dispatch({ type: "ADD_COMMENT", text: "444" }) }} disabled={newComment.length <= 0 ? true : false}>Add posts</button>
+     <button className={css.button} onClick={() => { dispatch({ type: "ADD_COMMENT" }) }} disabled={newComment.length <= 0 ? true : false}>Add posts</button>
     </div>
     <div className={css.comments}>
      {comments.map((el, index) => <Post key={index} message={el.msg} like={el.likeCount} />)}

@@ -13,6 +13,9 @@ export default Message
 
 Message.propTypes = {
  author: PropTypes.string,
- msg: PropTypes.string,
+ msg: PropTypes.oneOfType([
+  PropTypes.string,
+  PropTypes.number
+ ]),
  me: PropTypes.string
 }

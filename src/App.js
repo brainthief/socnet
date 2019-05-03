@@ -12,7 +12,6 @@ import { BrowserRouter, Route } from "react-router-dom"
 
 const App = (props) => {
   const { profilePage, dialogPage, sideBar } = props.state;
-  const { addNewPost, changeTextArea, changeMessageTextArea, addNewMessage } = props
   const dispatch = props.dispatch
   return (
     <BrowserRouter>
@@ -20,8 +19,8 @@ const App = (props) => {
         <Header />
         <Navbar sideBar={sideBar} />
         <div className='content'>
-          <Route exact path="/profile" render={() => <Profile profilePage={profilePage} addNewPost={addNewPost} changeTextArea={changeTextArea} dispatch={dispatch} />} />
-          <Route path="/dialogs" render={() => <Dialogs dialogPage={dialogPage} changeMessageTextArea={changeMessageTextArea} addNewMessage={addNewMessage} />} />
+          <Route exact path="/profile" render={() => <Profile profilePage={profilePage} dispatch={dispatch} />} />
+          <Route path="/dialogs" render={() => <Dialogs dialogPage={dialogPage} dispatch={dispatch} />} />
           <Route exact path="/music" component={Music} />
           <Route exact path="/news" component={News} />
           <Route exact path="/settings" component={Settings} />
