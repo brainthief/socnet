@@ -400,6 +400,163 @@ export const renderEntirePage = (state) => {
 ![flux concept](https://github.com/brainthief/socnet/blob/master/forgit/0333.jpg)
 
 -----------------------------------------------------
+store, subscribe, dispatch
+
+```
+export const ADD_COMMENT = 'PROFILE/ADD_COMMENT'
+export const UPDATE_TEXT = 'PROFILE/UPDATE_TEXT'
+...
+const store = {
+  _state: {
+    profilePage: {
+      title: 'My posts',
+      comments: [
+        { msg: 'all ok ;)', likeCount: 5 },
+      ...
+      ],
+      newComment: ""
+    },
+    ...
+  },
+  getState() {
+    return this._state
+  },
+  dispatch(action) {
+    switch (action.type) {
+      case ADD_COMMENT:
+        this._state.profilePage.comments = [{ msg: this._state.profilePage.newComment, likeCount: '0' }, ...this._state.profilePage.comments]
+        this._state.profilePage.newComment = ''
+        this._refresh()
+        break;
+      case UPDATE_TEXT:
+        this._state.profilePage.newComment = action.value
+        this._refresh()
+        break
+      ...
+      default:
+        break;
+    }
+  },
+  _refresh() {
+  },
+  subscribe(func) {
+    this._refresh = func
+  }
+}
+export default store
+```
+
+1.  _state ( "_" before property) means it's private property. To get or change need 'seters' and 'geters' methods in store object. Get method for state is :
+
+```
+  getState() {
+    return this._state
+  },
+
+```
+
+2. To use outside function (for manual render VirtualDOM) created empty method:
+```
+_refresh() {
+  },
+```
+With set method called subscribe changed to alias outside function:
+```
+ subscribe(func) {
+    this._refresh = func
+  }
+```
+In index.js changed alias to renderEntirePage function:
+```
+store.subscribe(renderEntirePage);
+```
+
+3. To access property inside object using this (nos object name)
+```
+    return this._state
+```
+
+4. Using one method for different actions (dispatch)
+
+```
+dispatch(action) {
+    switch (action.type) {
+      case ADD_COMMENT:
+        this._state.profilePage.comments = [{ msg: this._state.profilePage.newComment, likeCount: '0' }, ...this._state.profilePage.comments]
+        this._state.profilePage.newComment = ''
+        this._refresh()
+        break;
+      case UPDATE_TEXT:
+        this._state.profilePage.newComment = action.value
+        this._refresh()
+        break
+      default:
+        break;
+    }
+```
+
+action is object and must have **type** property:
+
+```
+dispatch({ type: "UPDATE_TEXT", value: e.target.value })
+```
+
+giving method to components:
+
+```
+const App = (props) => {
+ ...
+  const dispatch = props.dispatch
+  return (
+    <BrowserRouter>
+      <div className="appWrapper">
+        <Header />
+        <Navbar sideBar={sideBar} />
+        <div className='content'>
+          <Route exact path="/profile" render={() => <Profile profilePage={profilePage} dispatch={dispatch} />} />
+          <Route path="/dialogs" render={() => <Dialogs dialogPage={dialogPage} dispatch={dispatch} />} />
+          ...
+        </div>
+      </div>
+    </BrowserRouter>);}
+```
+
+In state.js is const for action type
+
+```
+export const ADD_COMMENT = 'PROFILE/ADD_COMMENT'
+export const UPDATE_TEXT = 'PROFILE/UPDATE_TEXT'
+```
+
+Importing in component needed const and using it:
+
+```
+...
+import { ADD_COMMENT, UPDATE_TEXT } from './../../../redux/state'
+
+const MyPosts = (props) => {
+ ...
+ let dispatch = props.dispatch
+ return (
+  <div className={css.myPosts}><div className={css.title}>{title}</div>
+   <div> New post
+    <div>
+     <textarea className={css.textarea} rows="1" onChange={(e) => { dispatch({ type: UPDATE_TEXT, value: e.target.value }) }} value={newComment}></textarea>
+    </div>
+    <div>
+     <button className={css.button} onClick={() => { dispatch({ type: ADD_COMMENT }) }} disabled={newComment.length <= 0 ? true : false}>Add posts</button>
+    </div>
+    <div className={css.comments}>
+     {comments.map((el, index) => <Post key={index} message={el.msg} like={el.likeCount} />)}
+    </div>
+   </div>
+  </div>
+ )
+}
+export default MyPosts
+```
+
+-----------------------------------------------------
 ```
 yarn add prop-types
 ```
@@ -483,6 +640,8 @@ const changeTextArea = (e) => {
 SOLID:
 
 **S** - every function / component / element / system is qualitatively responsible for one job
+
+**O** - open for sharing, closed for modification
 
 [List all lessons](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8)
 

@@ -1,3 +1,8 @@
+export const ADD_COMMENT = 'PROFILE/ADD_COMMENT'
+export const UPDATE_TEXT = 'PROFILE/UPDATE_TEXT'
+export const ADD_MESSAGE = 'DIALOGS/ADD_MESSAGE'
+export const UPDATE_MESSAGE = 'DIALOGS/UPDATE_MESSAGE'
+
 const store = {
   _state: {
     profilePage: {
@@ -46,22 +51,21 @@ const store = {
   },
   dispatch(action) {
     switch (action.type) {
-      case "ADD_COMMENT":
+      case ADD_COMMENT:
         this._state.profilePage.comments = [{ msg: this._state.profilePage.newComment, likeCount: '0' }, ...this._state.profilePage.comments]
         this._state.profilePage.newComment = ''
         this._refresh()
         break;
-      case "UPDATE_TEXT":
+      case UPDATE_TEXT:
         this._state.profilePage.newComment = action.value
-        // console.log('jjjj', action.value)
         this._refresh()
         break
-      case "ADD_MESSAGE":
+      case ADD_MESSAGE:
         this._state.dialogPage.chat = [...this._state.dialogPage.chat, { id: this._state.dialogPage.chat.length + 1, author: 'Me', msg: this._state.dialogPage.newMessage, me: "1" }]
         this._state.dialogPage.newMessage = ''
         this._refresh();
         break
-      case "UPDATE_MESSAGE":
+      case UPDATE_MESSAGE:
         this._state.dialogPage.newMessage = action.value
         this._refresh()
         break
