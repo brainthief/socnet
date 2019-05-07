@@ -472,7 +472,7 @@ let man = {
 }
 ```
 
-1. Encapsulation. Means don't use directly man.name
+1. Encapsulation. Means don't use directly man.name, bus use getters or setters. Hide details. 
 
 ```
 let man = {
@@ -486,7 +486,20 @@ let man = {
 console.log(man.getName())
 ```
 
+Properties of object starts be private. Using interface : 'geters' and 'seters'. 
 
+```
+let man = {
+  _name: 'Name',
+  _age: 31,
+  getName(){
+    return this._name;
+  },
+  setName(name){
+    this._name = name
+  }
+}
+```
 
 -----------------------------------------------------
 store, subscribe, dispatch
