@@ -399,6 +399,47 @@ export const renderEntirePage = (state) => {
 
 ![flux concept](https://github.com/brainthief/socnet/blob/master/forgit/0333.jpg)
 
+34. [Уроки React JS - Вынос мозга (FLUX-круговорот на каждый символ)](https://www.youtube.com/watch?v=bpEy10oJSCg)
+
+![state management](https://github.com/brainthief/socnet/blob/master/forgit/034.jpg)
+
+* for small project can be used local state of class components
+
+onChange save every symbol in state:
+
+```
+<div> New post
+  <div>
+    <textarea className={css.textarea} rows="1" onChange={(e) => { dispatch({ type: UPDATE_TEXT, value: e.target.value }) }} value={newComment}></textarea>
+  </div>
+  <div>
+    <button className={css.button} onClick={() => { dispatch({ type: ADD_COMMENT }) }} disabled={newComment.length <= 0 ? true : false}>Add posts</button>
+  </div>
+ ...
+</div>
+```
+
+save value from state and clear
+
+```
+dispatch(action) {
+    switch (action.type) {
+      case ADD_COMMENT:
+        this._state.profilePage.comments = [{ msg: this._state.profilePage.newComment, likeCount: '0' }, ...this._state.profilePage.comments]
+        this._state.profilePage.newComment = ''
+        this._refresh()
+        break;
+      case UPDATE_TEXT:
+        this._state.profilePage.newComment = action.value
+        this._refresh()
+        break
+        ...
+      default:
+        break;
+    }
+  },
+```
+
 -----------------------------------------------------
 store, subscribe, dispatch
 
