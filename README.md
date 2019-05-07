@@ -437,8 +437,23 @@ dispatch(action) {
       default:
         break;
     }
+  }
+```
+
+35. [Уроки, Курс React JS - callback, subscribe, observer](https://www.youtube.com/watch?v=iN6QXbHedQc)
+
+To use outside function (for manual render VirtualDOM) created empty method:
+```
+_refresh() {
   },
 ```
+Using setter method. Calling subscribe method and changed refresh() alias to outside function:
+```
+ subscribe(func) {
+    this._refresh = func
+  }
+```
+In index.js changed alias to renderEntirePage function:
 
 -----------------------------------------------------
 store, subscribe, dispatch
@@ -487,7 +502,7 @@ const store = {
 export default store
 ```
 
-1.  _state ( "_" before property) means it's private property. To get or change need 'seters' and 'geters' methods in store object. Get method for state is :
+1.  ___state ( "___" before property) means it's private property. To get or change need 'seters' and 'geters' methods in store object. Get method for state is :
 
 ```
   getState() {
