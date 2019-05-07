@@ -401,7 +401,7 @@ export const renderEntirePage = (state) => {
 
 34. [Уроки React JS - Вынос мозга (FLUX-круговорот на каждый символ)](https://www.youtube.com/watch?v=bpEy10oJSCg)
 
-![state management](https://github.com/brainthief/socnet/blob/master/forgit/034.jpg)
+![state management](https://github.com/brainthief/socnet/blob/master/forgit/034.JPG)
 
 * for small project can be used local state of class components
 
