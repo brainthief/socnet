@@ -453,7 +453,40 @@ Using setter method. Calling subscribe method and changed refresh() alias to out
     this._refresh = func
   }
 ```
+
 In index.js changed alias to renderEntirePage function:
+
+```
+store.subscribe(renderEntirePage);
+```
+
+36. [Уроки, Курс React JS - про ООП поверхностно (зачем нам объекты)](https://www.youtube.com/watch?v=s1n24A2Xr0M)
+
+```
+let man = {
+  name: 'Name',
+  age: 31,
+  sayName(){
+    alert(this.name);
+  }
+}
+```
+
+1. Encapsulation. Means don't use directly man.name
+
+```
+let man = {
+  name: 'Name',
+  age: 31,
+  getName(){
+    return this.name;
+  }
+}
+
+console.log(man.getName())
+```
+
+
 
 -----------------------------------------------------
 store, subscribe, dispatch
@@ -551,13 +584,13 @@ dispatch(action) {
     }
 ```
 
-action is object and must have **type** property:
+5. action is object and must have **type** property:
 
 ```
 dispatch({ type: "UPDATE_TEXT", value: e.target.value })
 ```
 
-giving method to components:
+6. giving method to components:
 
 ```
 const App = (props) => {
@@ -577,7 +610,7 @@ const App = (props) => {
     </BrowserRouter>);}
 ```
 
-In state.js is const for action type
+7. In state.js is const for action type
 
 ```
 export const ADD_COMMENT = 'PROFILE/ADD_COMMENT'
@@ -610,6 +643,20 @@ const MyPosts = (props) => {
  )
 }
 export default MyPosts
+```
+
+8. Need bind dispatch for save this content to store object
+
+```
+import store from './redux/state.jsx';
+const state = store.getState()
+
+const renderEntirePage = () => {
+ ReactDOM.render(<App
+  state={state}
+  dispatch={store.dispatch.bind(store)}
+ />, document.getElementById('root'));
+}
 ```
 
 -----------------------------------------------------
