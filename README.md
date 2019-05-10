@@ -472,7 +472,7 @@ let man = {
 }
 ```
 
-1. Encapsulation. Means don't use directly man.name, bus use getters or setters. Hide details. 
+Encapsulation. Means don't use directly man.name, bus use getters or setters. Hide details. Only with store methods can change date. This methods can call interface on object. 
 
 ```
 let man = {
@@ -596,6 +596,7 @@ dispatch(action) {
         break;
     }
 ```
+* **break** or **return** stops action.
 
 5. action is object and must have **type** property:
 
@@ -762,3 +763,124 @@ SOLID:
 [List all lessons](https://www.youtube.com/playlist?list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8)
 
 in debugger mode can get variables in console
+
+# Redux
+
+Library for state control. 
+
+Install:
+
+```
+yarn add redux
+```
+
+and
+
+```
+npm install redux --save
+```
+
+## Store
+
+* Have methods: getState, subscribe, dispatch
+* Will be created from init reducer data.
+* combineReducers will collect all reducers returns to one state
+* createStore(combinedReducers) will create store. Will create action type for init date (will work default with initialState data). 
+
+```
+  _state: {
+    profilePage: profilePageReducer(undefined, { type: 'init' }),
+    dialogPage: dialogPageReducer(undefined, { type: 'init' }),
+    sideBar: sideBarReducer(undefined, { type: 'init' })
+  },
+```
+
+* store.getState() return state
+* have dispatch and subscribe methods
+
+
+```
+import profilePageReducer from './redux/profilePageReducer'
+import dialogPageReducer from './redux/dialogPageReducer'
+import sideBarReducer from './redux/sideBarReducer'
+import { combineReducers, createStore } from 'redux'
+
+
+const combinedReducers = combineReducers({
+ profilePage: profilePageReducer,
+ dialogPage: dialogPageReducer,
+ sideBar: sideBarReducer
+})
+const store = createStore(combinedReducers)
+const state = store.getState()
+```
+
+## Subscribe
+
+* renderEntirePage(state) - callback function for 'manual' rendering.
+* subscribe wil be run i every dispatch.
+
+```
+store.subscribe(() => {
+ const state = store.getState();
+ renderEntirePage(state)
+});
+```
+
+## Action
+
+* REDUX - DUCK - logic for naming action type.
+* Action is object.
+* Every action must have property type. **SC/PROFILE_PAGE/ACC_COMMENT** - **project/page/action** and it must be unique, because every action will be given to every reducer.
+
+## Dispatch
+
+* Will give part **state** ant **action** to reducer.
+* After all he will initialize render VirtualDOM.
+
+```
+dispatch(action) {
+    this._state.profilePage = profilePageReducer(this._state.profilePage, action)
+    this._state.dialogPage = dialogPageReducer(this._state.dialogPage, action)
+    this._state.sideBar = sideBarReducer(this._state.sideBar, action)
+    this._refresh();
+}
+```
+
+## Reducer
+
+* Every reducer are in separate files.
+* Reducer will get state and action.
+* Every reducer is responsible only part of state (**state = store.state.profilePage**). Dispatch connect all part to one sate.
+* Reducer must have initial state for initialization. (sideBarPageReducer = (state **= initialState**, action)).
+* Every reducer must return state.
+* Every action will be send to every reducer.
+
+
+Empty reducer
+```
+const sideBarPageReducer = (state = initialState, action) => {
+ switch (action.type) {
+  default:
+   return state
+ }
+}
+```
+
+Example:
+```
+...
+const profilePageReducer = (state = initialState, action) => {
+ switch (action.type) {
+  case ADD_COMMENT:
+   state.comments = [{ msg: state.newComment, likeCount: '0' }, ...state.comments]
+   state.newComment = ''
+   return state
+  case UPDATE_TEXT:
+   state.newComment = action.value
+   return state
+  default:
+   return state
+}}
+...
+```
