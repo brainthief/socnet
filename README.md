@@ -884,3 +884,16 @@ const profilePageReducer = (state = initialState, action) => {
 }}
 ...
 ```
+
+
+# React-redux
+
+```
+import {Provider} from './react-redux'
+```
+
+ReactDOM.render((
+ <Provider store={store}>
+  <AppRootComponent />
+ </Provider>
+), rootElement)
