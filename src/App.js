@@ -11,16 +11,14 @@ import { BrowserRouter, Route } from "react-router-dom"
 
 
 const App = (props) => {
-  const { profilePage, dialogPage, sideBar } = props.state;
-  const dispatch = props.dispatch
   return (
     <BrowserRouter>
       <div className="appWrapper">
         <Header />
-        <Navbar sideBar={sideBar} />
+        <Navbar />
         <div className='content'>
-          <Route exact path="/profile" render={() => <Profile profilePage={profilePage} dispatch={dispatch} />} />
-          <Route path="/dialogs" render={() => <Dialogs dialogPage={dialogPage} dispatch={dispatch} />} />
+          <Route exact path="/profile" render={() => <Profile />} />
+          <Route path="/dialogs" render={() => <Dialogs />} />
           <Route exact path="/music" component={Music} />
           <Route exact path="/news" component={News} />
           <Route exact path="/settings" component={Settings} />

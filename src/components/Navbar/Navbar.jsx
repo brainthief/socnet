@@ -2,6 +2,7 @@ import React from 'react'
 import css from './Navbar.module.css'
 import { NavLink } from 'react-router-dom'
 import Friends from './Friends/Friends'
+import { connect } from 'react-redux'
 
 const Nav = (props) => {
  const { sideBar } = props
@@ -17,4 +18,12 @@ const Nav = (props) => {
  )
 }
 
-export default Nav
+const mapStateToProps = (state) => {
+ return {
+  sideBar: state.sideBar
+ }
+}
+
+const ConnectedNavBar = connect(mapStateToProps)(Nav)
+
+export default ConnectedNavBar

@@ -30,12 +30,14 @@ export const updateCommentTextActionCreator = (value) => {
 const profilePageReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_COMMENT:
-      state.comments = [{ msg: state.newComment, likeCount: '0' }, ...state.comments]
-      state.newComment = ''
-      return state
+      let newState = { ...state }
+      newState.comments = [{ msg: state.newComment, likeCount: '0' }, ...state.comments]
+      newState.newComment = ''
+      return newState
     case UPDATE_TEXT:
-      state.newComment = action.value
-      return state
+      newState = { ...state }
+      newState.newComment = action.value
+      return newState
     default:
       return state
   }

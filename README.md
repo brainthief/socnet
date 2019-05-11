@@ -888,12 +888,18 @@ const profilePageReducer = (state = initialState, action) => {
 
 # React-redux
 
+Install:
 ```
-import {Provider} from './react-redux'
+yarn add react-redux
 ```
 
+Envelope main component
+```
+import {Provider} from './react-redux'
+...
 ReactDOM.render((
  <Provider store={store}>
   <AppRootComponent />
  </Provider>
 ), rootElement)
+```

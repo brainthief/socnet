@@ -9,6 +9,7 @@ import profilePageReducer from './redux/profilePageReducer'
 import dialogPageReducer from './redux/dialogPageReducer'
 import sideBarReducer from './redux/sideBarReducer'
 import { combineReducers, createStore } from 'redux'
+import { Provider } from 'react-redux'
 
 
 const combinedReducers = combineReducers({
@@ -17,21 +18,18 @@ const combinedReducers = combineReducers({
  sideBar: sideBarReducer
 })
 const store = createStore(combinedReducers)
-const state = store.getState()
 
-const renderEntirePage = (state) => {
- ReactDOM.render(<App
-  state={state}
-  dispatch={store.dispatch.bind(store)}
- />, document.getElementById('root'));
-}
+ReactDOM.render(
+ <Provider store={store}><App /></Provider>, document.getElementById('root'));
 
-store.subscribe(() => {
- const state = store.getState();
- renderEntirePage(state)
-});
 
-renderEntirePage(state);
+// store.subscribe(() => {
+//  // const state = store.getState();
+//  // renderEntirePage(state)
+//  console.log(store.getState())
+// });
+
+// renderEntirePage(state);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
