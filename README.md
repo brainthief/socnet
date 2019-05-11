@@ -818,7 +818,7 @@ const state = store.getState()
 ## Subscribe
 
 * renderEntirePage(state) - callback function for 'manual' rendering.
-* subscribe wil be run i every dispatch.
+* subscribe will be run after every dispatch.
 
 ```
 store.subscribe(() => {
@@ -832,6 +832,54 @@ store.subscribe(() => {
 * REDUX - DUCK - logic for naming action type.
 * Action is object.
 * Every action must have property type. **SC/PROFILE_PAGE/ACC_COMMENT** - **project/page/action** and it must be unique, because every action will be given to every reducer.
+* Can be combined to one object for logic. One export exports all actions constants.
+
+```
+export const DIALOGS = {
+  ADD_MESSAGE: 'SC/DIALOGS/ADD_MESSAGE',
+  REMOVE_MESSAGE: 'SC/DIALOGS/REMOVE_MESSAGE'
+}
+```
+
+and use in reduce:
+
+```
+case DIALOGS.ADD_MESSAGE
+```
+
+## Action creators
+
+* Its functions for creating actions for reducers
+* Helping create action in component
+
+```
+import { addMessageActionCreator, updateMessageActionCreator } from './../../redux/dialogPageReducer'
+...
+const mapDispatchToProps = (dispatch) => {
+ return {
+  addMessage: () => { dispatch(addMessageActionCreator()) },
+  updateMessage: (e) => { dispatch(updateMessageActionCreator(e.target.value)) }
+ }
+}
+```
+
+Action creators:
+```
+export const addMessageActionCreator = () => {
+  return {
+    type: ADD_MESSAGE
+  }
+}
+
+export const updateMessageActionCreator = (value) => {
+  return {
+    type: UPDATE_MESSAGE,
+    value
+  }
+}
+```
+
+* We quickly know what need for action.
 
 ## Dispatch
 
@@ -885,13 +933,29 @@ const profilePageReducer = (state = initialState, action) => {
 ...
 ```
 
+With default data:
+```
+const combinedReducers = combineReducers({
+ profilePage: profilePageReducer,
+ dialogPage: dialogPageReducer,
+ sideBar: sideBarReducer
+})
+const store = createStore(combinedReducers, {})
+```
+[Ducks: Redux Reducer Bundles](https://github.com/erikras/ducks-modular-redux)
 
 # React-redux
+
+* Clear component from attributes
 
 Install:
 ```
 yarn add react-redux
 ```
+
+## Provider
+
+* Fix context problem
 
 Envelope main component
 ```
@@ -903,3 +967,152 @@ ReactDOM.render((
  </Provider>
 ), rootElement)
 ```
+
+## Connect
+
+* Its HOC.
+* Monitoring or data changed.
+* Initialization render after data modification.
+* connect()() - firs run connect(), then results go to ().
+* connect(mapStateToProps, mapDispatchToProps)(Dialogs) - combine sate and functions to component (Dialogs).
+* mapStateToProps - connect state part to component props. This name can be changed.
+
+Connect **state.dialogPage**  to component props via dialogPage property
+
+```
+const mapStateToProps = (state) => {
+ return { dialogPage: state.dialogPage  }
+}
+```
+
+And in results in props object:
+
+```
+ const { userList, chat, newMessage } = props.dialogPage;
+```
+
+* mapDispatchToProps - connect dispatcher to object props. This name can be changed.
+
+```
+const mapDispatchToProps = (dispatch) => {
+ return {
+  addMessage: () => { dispatch(addMessageActionCreator()) },
+  updateMessage: (e) => { dispatch(updateMessageActionCreator(e.target.value)) }
+ }
+}
+```
+
+After in props appears callbacks:
+```
+const { addMessage, updateMessage } = props
+```
+
+Inside component can be used:
+```
+const MyPosts = (props) => {
+ const { addMessage, updateMessage } = props
+ return (
+...
+     <textarea className={css.textarea} rows="1" onChange={(e) => { updateMessage(e) }} value={newComment}></textarea>
+...
+     <button className={css.button} onClick={() => { addMessage() }} disabled={newComment.length <= 0 ? true : false}>Add posts</button>
+...
+ )
+}
+```
+
+Code:
+```
+const Dialogs = (props) => {
+ const { userList, chat, newMessage } = props.dialogPage;
+ const { addMessage, updateMessage } = props
+
+ return (
+ ...
+ )
+}
+
+const mapStateToProps = (state) => {
+ return {
+  dialogPage: state.dialogPage
+ }
+}
+
+const mapDispatchToProps = (dispatch) => {
+ return {
+  addMessage: () => { dispatch(addMessageActionCreator()) },
+  updateMessage: (e) => { dispatch(updateMessageActionCreator(e.target.value)) }
+ }
+}
+
+const ConnectedDialogs = connect(mapStateToProps, mapDispatchToProps)(Dialogs)
+export default ConnectedDialogs
+```
+
+**In reducers must be used copies of state**
+
+```
+const dialogPageReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case ADD_MESSAGE:
+      let newState = { ...state }
+      ...
+      return newState
+    case UPDATE_MESSAGE:
+      newState = { ...state }
+      newState.newMessage = action.value
+      return newState
+    case DELETE:
+      newState = { ...state }
+      newState.messages = newState.messages.filter( n => n.id != action.id )
+      return newState
+    default:
+      return state
+  }
+}
+```
+
+# JavaScript basics
+
+* In JS is primitives and objects
+
+Created 4 objects
+```
+let a = {
+  dialogs: [1,2,3],
+  messages: ['text1', 'text2'],
+  current: {name: 'one', id: 5}
+}
+```
+
+## Shadow copy - paviršutinė kopija.
+
+* Using spread operator.
+* Coped (created copy in memory) only primitives
+* Coped link to memory. Physical object in memory still same, just one more line to same area.
+
+```
+let stateCopy = {...state}
+```
+
+Create deeper copy - using spread operators to every object:
+```
+let stateCopy = {
+  ...state,
+  dialogs: [...state.dialogs],
+  messages: [...state.messages],
+  currentDialog: {...state.currentDialog}
+  }
+```
+
+[Library for create deep copy](https://github.com/immutable-js/immutable-js)
+
+Function for recursive object copy (to JSON -> JSON to object):
+```
+const cloned = JSON.parse(JSON.stringify(original))
+```
+
+# VS Code
+
+* ctrl + alt + -> - moving to different tab
+* ctrl + space - activate advisor
