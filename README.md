@@ -1194,7 +1194,10 @@ let a = {
 let stateCopy = {...state}
 ```
 
+# Deep object copy
+
 Create deeper copy - using spread operators to every object:
+
 ```
 let stateCopy = {
   ...state,
