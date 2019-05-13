@@ -2,6 +2,8 @@
 
 Social network for training purpose
 
+* if in folder is index.js file, it will be imported first
+
 ## Links
 
 01 [Уроки "React JS - путь самурая](https://www.youtube.com/watch?v=Zgd9IlbhDcU&list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8) - Intro
@@ -113,6 +115,18 @@ VS EN spell checker - **Code Spell Checker**
 ```
  <div className={`${css.item} ${css.active}`}>Message</div>
  ```
+ ---------------------------------------------
+ Inline styles with logic:
+
+ ```
+ const style = {
+   color: important ? 'steelblue' : 'black',
+   fontWeight: important ? 'bold' : 'normal'
+ }
+ ...
+ return(<span style={style}>...</span>)
+ ```
+
 
 
 15 [Уроки React JS (структура папок, новые компоненты, улучшаем css)](https://www.youtube.com/watch?v=8VOuxijh9_s)
@@ -308,6 +322,65 @@ Giving link (function is object - have links)(without "()" ):
 
 ```
 <button onCLick={ myFunction }>send</button>
+```
+
+* event in camel case - onClick, onBlur, onMouseOver.
+* need give function.
+* pay attention to this save context. 
+* in class component giving link using this.
+```
+onLabelCLick(){
+}
+render() {
+  return(
+    ...
+    <span
+     onClick = {this.onLabelClick}
+    >
+     Click
+    </span>
+    ...
+  )
+}
+```
+* in class component giving link with bind this (?every time will be created new function).
+```
+onLabelCLick(){
+  console.log(this.props.label)
+}
+render() {
+  return(
+    ...
+    <span
+     onClick = {this.onLabelClick.bind(this)}
+    >
+     Click
+    </span>
+    ...
+  )
+}
+```
+
+* if function is in constructor will get save this
+```
+constructor(){
+  super();
+  this.onLabelCLick(){
+    console.log(this.props.label)
+  }
+}
+
+render() {
+  return(
+    ...
+    <span
+     onClick = {this.onLabelClick}
+    >
+     Click
+    </span>
+    ...
+  )
+}
 ```
 
 ------------------------------
@@ -1072,6 +1145,32 @@ const dialogPageReducer = (state = initialState, action) => {
 }
 ```
 
+# Class component (statefull)
+
+* used when need have local store.
+* extends react Component
+* can have constructor
+```
+constructor() {
+}
+```
+* super() - will get parent (extended class) properties.
+```
+constructor(){
+  super();
+}
+```
+* method render() return like function component
+* props available **this.props**
+```
+render(){
+  const {label, important = false} = this.props
+  ...
+  return()
+}
+```
+
+
 # JavaScript basics
 
 * In JS is primitives and objects
@@ -1104,6 +1203,8 @@ let stateCopy = {
   currentDialog: {...state.currentDialog}
   }
 ```
+
+
 
 [Library for create deep copy](https://github.com/immutable-js/immutable-js)
 
