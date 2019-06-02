@@ -8,6 +8,7 @@ import * as serviceWorker from './serviceWorker';
 import profilePageReducer from './redux/profilePageReducer'
 import dialogPageReducer from './redux/dialogPageReducer'
 import sideBarReducer from './redux/sideBarReducer'
+import userListPageReducer from './redux/userListPageReducer'
 import { combineReducers, createStore } from 'redux'
 import { Provider } from 'react-redux'
 
@@ -15,7 +16,8 @@ import { Provider } from 'react-redux'
 const combinedReducers = combineReducers({
  profilePage: profilePageReducer,
  dialogPage: dialogPageReducer,
- sideBar: sideBarReducer
+ sideBar: sideBarReducer,
+ userList: userListPageReducer
 })
 const store = createStore(combinedReducers)
 
