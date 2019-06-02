@@ -5,26 +5,48 @@ export const statuses = {
  SUCCESS: "SUCCESS",
 };
 
-const UPDATE_SEARCH_NAME = "CB/SEARCH_FORM/UPDATE_MESSAGE";
-const UPDATE_SEARCH_PHONE = "CB/SEARCH_FORM/UPDATE_PHONE";
 const UPDATE_STATUS_INPROGRESS = "CB/TABLE/UPDATE_STATUS_INPROGRESS";
 const UPDATE_STATUS_SUCCESS = "CB/TABLE/UPDATE_STATUS_SUCCESS";
 const UPDATE_DATA = "CB/TABLE/UPDATE_DATA_FROM_AXIOS";
-const DELETE_ROW = "CB/TABLE/DELETE_ROW"
-const SELECT_EDIT = "CB/TABLE/SELECT_ON_CLICK"
-const UPDATE_EDIT_NAME = "CB/TABLE/UPDATE_EDIT_NAME"
-const UPDATE_EDIT_PHONE = "CB/TABLE/UPDATE_EDIT_PRONE"
 
 const initialState = {
  status: statuses.NOT_INITIALIZED,
  data: []
 };
 
+export const updateStatusInprogressActionCreator = () => {
+ return {
+  type: UPDATE_STATUS_INPROGRESS,
+ };
+};
+
+export const updateStatusSuccessActionCreator = () => {
+ return {
+  type: UPDATE_STATUS_SUCCESS,
+ };
+};
+
+export const updateDataActionCreator = value => {
+ return {
+  type: UPDATE_DATA,
+  value,
+ };
+};
+
 const userListPageReducer = (state = initialState, action) => {
  switch (action.type) {
-  case UPDATE_SEARCH_NAME:
-   let newState = { ...state };
-   return newState;
+  case UPDATE_STATUS_INPROGRESS:
+   let newStateS = { ...state };
+   newStateS.status = statuses.INPROGRESS;
+   return newStateS;
+  case UPDATE_STATUS_SUCCESS:
+   let newStateSu = { ...state };
+   newStateSu.status = statuses.SUCCESS;
+   return newStateSu;
+  case UPDATE_DATA:
+   let newStateSa = { ...state };
+   newStateSa.data = action.value;
+   return newStateSa;
   default:
    return state;
  }
