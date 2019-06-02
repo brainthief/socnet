@@ -1194,7 +1194,7 @@ let a = {
 let stateCopy = {...state}
 ```
 
-# Deep object copy
+## Deep object copy
 
 Create deeper copy - using spread operators to every object:
 
@@ -1215,6 +1215,68 @@ Function for recursive object copy (to JSON -> JSON to object):
 ```
 const cloned = JSON.parse(JSON.stringify(original))
 ```
+
+# API
+
+API - Application Programming Interface
+
+Server have entry point (endpoint). Browser send request to endpoint. In our situation every endpoint have unique url.
+
+## Transmission have:
+
+1. **URL** where will be send.
+2. http-request type: **get** (for get data)/ **post** (for send data)
+3. request payload - sending data
+4. response data - returned data
+5. http codes: **404** (not found) / **5XX** (server errors) / **3XX** (redirected), **2XX** (OK)
+
+## RESP server API
+
+'GET-POST' way:
+- "http://xx.com/api/users/get" - **get** type
+- "http://xx.com/api/users/create" - **post** type
+- "http://xx.com/api/users/update" - **post** type
+- "http://xx.com/api/users/delete" - **post** type
+
+'GET-POST-PUT-DELETE' (CRUD) way:
+
+- "http://xx.com/api/users" - types **get/post/put/delete**
+
+RESP API transmission have:
+1. **URL** where will be send.
+2. http-request type: **get** (for get data)/ **post** (for create data) /  **put** (for update data) /  **delete** (for delete data) / patch
+3. request payload - sending data
+4. response data - returned data
+5. http codes: **404** (not found) / **5XX** (server errors) / **3XX** (redirected), **2XX** (OK)
+
+
+**RESP** - one endpoint and different types
+
+# AXIOS
+
+```
+yarn add axios
+```
+
+## get in axios
+
+```
+axios
+ .get("https://xx.com/users")
+ .then(data => ....)
+```
+* result will come in first parameter. 
+
+## async 
+
+```
+console.log('1')
+axios
+ .get("https://xx.com/users")
+ .then(data => console.log('2') )
+console.log('3')
+```
+result: 132, because axios.get async method. Came to event loop. 
 
 # VS Code
 
