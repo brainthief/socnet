@@ -1393,9 +1393,89 @@ console.log('3')
 ```
 result: 132, because axios.get async method. Came to event loop. 
 
-## control transfer
+## control status of transfer 
 
+1. create status constants in reducer 
 
+```
+export const statuses = {
+ NOT_INITIALIZED: "NOT_INITIALIZED",
+ ERROR: "ERROR",
+ INPROGRESS: "INPROGRESS",
+ SUCCESS: "SUCCESS",
+};
+```
+
+2. create reducer
+
+* constant for actions
+```
+const UPDATE_STATUS_INPROGRESS = "CB/TABLE/UPDATE_STATUS_INPROGRESS";
+const UPDATE_STATUS_SUCCESS = "CB/TABLE/UPDATE_STATUS_SUCCESS";
+```
+
+* action creators
+```
+const initialState = {
+ status: statuses.NOT_INITIALIZED,
+ data: []
+};
+
+export const updateStatusInprogressActionCreator = () => {
+ return {
+  type: UPDATE_STATUS_INPROGRESS,
+ };
+};
+```
+
+* reducer 
+
+```
+const userListPageReducer = (state = initialState, action) => {
+ switch (action.type) {
+  case UPDATE_STATUS_INPROGRESS:
+   ...
+   newStateS.status = statuses.INPROGRESS;
+   return newStateS;
+  case UPDATE_STATUS_SUCCESS:
+   ...
+   newStateSu.status = statuses.SUCCESS;
+   return newStateSu;
+  default:
+   return state;
+ }
+};
+```
+
+* on load component
+
+```
+const UserList = (props) => {
+  ...
+  if (status === statuses.NOT_INITIALIZED) {
+    setInprogress();
+    axios.get("https://....com/api/users").then(res => {
+
+      res.data.error ? alert(res.data.error) : setData(res.data)
+      res.data.error ? alert(res.data.error) : setSuccess()
+    });
+
+  }
+  ...
+  const mapDispatchToProps = dispatch => {
+  return {
+    setInprogress: () => {
+      dispatch(updateStatusInprogressActionCreator());
+    },
+    setSuccess: () => {
+      dispatch(updateStatusSuccessActionCreator());
+    },
+    setData: val => {
+      dispatch(updateDataActionCreator(val));
+    }
+  };
+};
+```
 
 # VS Code
 

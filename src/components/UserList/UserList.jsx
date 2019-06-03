@@ -1,5 +1,6 @@
 import React from 'react'
-import * as axios from "axios";
+
+import API from './../../api/API'
 import { connect } from "react-redux";
 import css from './UserList.module.css'
 import {
@@ -17,8 +18,7 @@ const UserList = (props) => {
 
   if (status === statuses.NOT_INITIALIZED) {
     setInprogress();
-    axios.get("https://social-network.samuraijs.com/api/1.0/users").then(res => {
-
+    API.getUsers().then(res => {
       res.data.error ? alert(res.data.error) : setData(res.data)
       res.data.error ? alert(res.data.error) : setSuccess()
     });
