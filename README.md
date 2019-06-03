@@ -574,6 +574,109 @@ let man = {
 }
 ```
 
+37. [Уроки, Курс React JS - store, state, ООП, рефакторинг](https://www.youtube.com/watch?v=Bq_tmt-hRn0)
+
+* all state with methods will be in store.
+
+```
+const store = {
+  _state: {
+    profilePage: {...},
+    ...
+  },
+  getState() {...},
+  dispatch(action) {...},
+  _refresh() {...},
+  subscribe(func) {...}
+}
+export default store
+```
+
+ * function migrate to store method
+
+ ```
+ const getState = () => {}
+ ```
+
+ goes to 
+
+ ```
+ const store = {
+  _state: {...},
+  getState() {...}
+}
+ ```
+
+ * if need get state outside:
+
+```
+const store = {
+  _state: {
+    profilePage: {...},
+    ...
+  },
+  getState() {
+    return this._state
+  },
+}
+export default store
+```
+
+use:
+
+```
+store.getState()
+```
+# Context Problem
+
+**TypeError: Cannot read property 'profilePage' of undefined**
+
+Means that with profilePage ir ok, but problem 'left'. **Context**
+
+**this._state.**profilePage
+
+This means who name call function, not where it is.
+```
+const store = {
+  _state: {
+    profilePage: {...},
+    ...
+  },
+  getState() {
+    return this._state
+  },
+}
+```
+
+using:
+
+```
+<App state={store.getState()}>
+```
+this will be **store**
+
+if we send (don't run) link function to component
+
+```
+<App addPost={store.addPost}>
+```
+
+and call in component function - this will be this props context
+
+```
+const addPost = () => {
+  props.addPost()
+}
+```
+
+For save context need use bind method
+
+```
+<App addPost={store.addPost.bind(store)}>
+```
+
+Will return function with mounted needed context. This = store
+
 -----------------------------------------------------
 store, subscribe, dispatch
 
@@ -1228,9 +1331,13 @@ Server have entry point (endpoint). Browser send request to endpoint. In our sit
 2. http-request type: **get** (for get data)/ **post** (for send data)
 3. request payload - sending data
 4. response data - returned data
-5. http codes: **404** (not found) / **5XX** (server errors) / **3XX** (redirected), **2XX** (OK)
+5. http codes in status: **404** (not found) / **5XX** (server errors) / **3XX** (redirected), **2XX** (OK)
+
+* **Get** request don't have payload. Only parameters in url - https://...**?id=1&page=3**
 
 ## RESP server API
+
+* every endpoint have unique url
 
 'GET-POST' way:
 - "http://xx.com/api/users/get" - **get** type
@@ -1247,10 +1354,17 @@ RESP API transmission have:
 2. http-request type: **get** (for get data)/ **post** (for create data) /  **put** (for update data) /  **delete** (for delete data) / patch
 3. request payload - sending data
 4. response data - returned data
-5. http codes: **404** (not found) / **5XX** (server errors) / **3XX** (redirected), **2XX** (OK)
-
+5. http codes in status: **404** (not found) / **5XX** (server errors) / **3XX** (redirected), **2XX** (OK)
 
 **RESP** - one endpoint and different types
+
+## API First
+
+* first step - create API: documentation, specification, plans. 
+* second step - created or generated frontend and backend.
+
+[SWAGGER](https://swagger.io/blog/api-development/api-first-approach-with-swagger/)
+[RAML](https://raml.org/)
 
 # AXIOS
 
@@ -1266,6 +1380,7 @@ axios
  .then(data => ....)
 ```
 * result will come in first parameter. 
+* good practice initial data request use in componentDidMount  
 
 ## async 
 
@@ -1278,7 +1393,19 @@ console.log('3')
 ```
 result: 132, because axios.get async method. Came to event loop. 
 
+## control transfer
+
+
+
 # VS Code
 
 * ctrl + alt + -> - moving to different tab
 * ctrl + space - activate advisor
+
+# Chrome
+
+[JSON view plugin for chrome](https://chrome.google.com/webstore/search/jsonview?h1=lt)
+
+#Other
+
+[Yarn](https://yarnpkg.com/en/)

@@ -12,7 +12,6 @@ import userListPageReducer from './redux/userListPageReducer'
 import { combineReducers, createStore } from 'redux'
 import { Provider } from 'react-redux'
 
-
 const combinedReducers = combineReducers({
  profilePage: profilePageReducer,
  dialogPage: dialogPageReducer,
