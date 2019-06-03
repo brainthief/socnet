@@ -1379,6 +1379,8 @@ axios
  .get("https://xx.com/users")
  .then(data => ....)
 ```
+* axios.get() -> return promise
+
 * result will come in first parameter. 
 * good practice initial data request use in componentDidMount  
 

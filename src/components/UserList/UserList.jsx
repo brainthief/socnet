@@ -11,33 +11,34 @@ import {
 } from './../../redux/userListPageReducer.js'
 import logo from './../../img/incognito.png'
 
-const UserList = (props) => {
-  const { status, data } = props.userList
-  const { setInprogress, setSuccess, setData } = props
-  console.log(data)
+class UserList extends React.Component {
+  render() {
+    const { status, data } = this.props.userList
+    const { setInprogress, setSuccess, setData } = this.props
 
-  if (status === statuses.NOT_INITIALIZED) {
-    setInprogress();
-    API.getUsers().then(res => {
-      res.data.error ? alert(res.data.error) : setData(res.data)
-      res.data.error ? alert(res.data.error) : setSuccess()
-    });
+    if (status === statuses.NOT_INITIALIZED) {
+      setInprogress();
+      API.getUsers().then(res => {
+        res.data.error ? alert(res.data.error) : setData(res.data)
+        res.data.error ? alert(res.data.error) : setSuccess()
+      });
 
-  }
+    }
 
-  return <div className={css.contentText}>
-    User List
+    return <div className={css.contentText}>
+      User List
     {status === statuses.SUCCESS ? data.items.map(el => <div key={el.id}>
-      <hr />
-      <p>{el.id} - {el.name}</p>
-      <p>
-        <img className={css.img} src={el.photos.small ? el.photos.small : logo} />
-      </p>
+        <hr />
+        <p>{el.id} - {el.name}</p>
+        <p>
+          <img className={css.img} src={el.photos.small ? el.photos.small : logo} />
+        </p>
 
-    </div>)
+      </div>)
 
-      : null}
-  </div>
+        : null}
+    </div>
+  }
 }
 
 
