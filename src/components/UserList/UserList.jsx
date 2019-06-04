@@ -1,39 +1,23 @@
 import React from 'react'
-import API from './../../api/API'
 import { connect } from "react-redux";
 import css from './UserList.module.css'
 import {
   statuses,
-  updateStatusInprogressActionCreator,
-  updateStatusSuccessActionCreator,
-  updateDataActionCreator
+  fetchTasksThunkCreator
 } from './../../redux/userListPageReducer.js'
 import logo from './../../img/incognito.png'
 
 class UserList extends React.Component {
 
-  constructor(props) {
-    super(props);
-
-    // this.props.setData = this.props.setData.bind(this)
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   componentDidMount() {
-    console.log(this.props)
-    API.getUsers().then(res => {
-      // debugger
-      res.data.error ? alert(res.data.error) : this.props.setData(res.data)
-      res.data.error ? alert(res.data.error) : this.props.setSuccess()
-    });
-
-
+    this.props.fetchTask();
   }
 
   render() {
-    // const { status, data } = this.props.userList
-    // const { setInprogress, setSuccess, setData } = this.props
-
-
 
     // if (status === statuses.NOT_INITIALIZED) {
     //   setInprogress();
@@ -69,15 +53,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setInprogress: () => {
-      dispatch(updateStatusInprogressActionCreator());
+    fetchTask: () => {
+      dispatch(fetchTasksThunkCreator())
     },
-    setSuccess: () => {
-      dispatch(updateStatusSuccessActionCreator());
-    },
-    setData: val => {
-      dispatch(updateDataActionCreator(val));
-    }
   };
 };
 

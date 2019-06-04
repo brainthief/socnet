@@ -3,14 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-// import store from './redux/state.jsx';
-
 import profilePageReducer from './redux/profilePageReducer'
 import dialogPageReducer from './redux/dialogPageReducer'
 import sideBarReducer from './redux/sideBarReducer'
 import userListPageReducer from './redux/userListPageReducer'
-import { combineReducers, createStore } from 'redux'
+import { combineReducers, createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
+import thunkMiddleware from 'redux-thunk'
 
 const combinedReducers = combineReducers({
  profilePage: profilePageReducer,
@@ -18,7 +17,7 @@ const combinedReducers = combineReducers({
  sideBar: sideBarReducer,
  userList: userListPageReducer
 })
-const store = createStore(combinedReducers)
+const store = createStore(combinedReducers, applyMiddleware(thunkMiddleware))
 
 ReactDOM.render(
  <Provider store={store}><App /></Provider>, document.getElementById('root'));
