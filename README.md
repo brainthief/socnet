@@ -1248,6 +1248,63 @@ const dialogPageReducer = (state = initialState, action) => {
 }
 ```
 
+## Thunk
+
+BLL must work with DAL. UI can't work DAL. 
+```
+yarn add redux-thunk
+```
+
+### Where creating store need import applyMiddleware from redux and thunkMiddleware from redux-thunk.
+
+```
+import { combineReducers, createStore, applyMiddleware } from 'redux'
+import thunkMiddleware from 'redux-thunk'
+```
+
+In second parameter give applyMiddleware
+
+```
+const store = createStore(combinedReducers, applyMiddleware(thunkMiddleware))
+```
+
+### In reducer create ThunkCreator
+```
+export const fetchTasksThunkCreator = () => {
+  return (dispatch) => {
+    dispatch(updateStatusInprogressActionCreator());
+    API.getUsers().then(res => {
+      res.data.error ? alert(res.data.error) : dispatch(updateDataActionCreator(res.data));
+      res.data.error ? alert(res.data.error) : dispatch(updateStatusSuccessActionCreator());
+    });
+  }
+}
+```
+* ThunkCreator return function, that need dispatch. 
+* We can use more that one dispatch
+* Can dispatch actions at thunks in thunk
+
+
+### Now need dispatch thunk creator in component:
+```
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchTask: () => {
+      dispatch(fetchTasksThunkCreator())
+    },
+  };
+};
+```
+And run this method:
+```
+  componentDidMount() {
+    this.props.fetchTask();
+  }
+```
+
+
+
+
 # Class component (statefull)
 
 * used when need have local store.
@@ -1257,11 +1314,19 @@ const dialogPageReducer = (state = initialState, action) => {
 constructor() {
 }
 ```
-* super() - will get parent (extended class) properties.
+* super() - will get parent (extended class) properties and execute parent class constructor.
 ```
 constructor(){
   super();
 }
+```
+* if not used constructor react will create clear basic constructor
+* state can be created outside constructor
+```
+class App extends React.Component {
+  state = {}
+}
+
 ```
 * method render() return like function component
 * props available **this.props**
@@ -1273,6 +1338,53 @@ render(){
 }
 ```
 
+* class component return object - {}.render()
+* functional component return JSX
+
+* create method in class component. Method must work with data. 
+```
+class App extends React.Component {
+
+  myMethod {
+
+  }
+}
+```
+
+* this context in class component
+```
+class App extends React.Component {
+  myMethod {
+    alert(this.myId)
+  }
+  myId = 15;
+}
+```
+
+* given method in attributes will lost his this context.
+```
+<button onClick={this.myMethod} Click</button>
+```
+for fix need bind
+```
+<button onClick={this.myMethod.bind(this)} Click</button>
+```
+Better way is bind in constructor, than render. Constructor run only one time. And bind will create only one function with correct context. Render run after every change and every time will created new function (object) in memory.
+```
+constructor(){
+  super();
+  this.myMethod=this.myMethod.bind(this)
+}
+```
+if method created with arrow function - context will be correct.
+```
+class App extends React.Component {
+  myMethod =  () => {
+    alert(this.myId)
+  }
+  myId = 15;
+}
+```
 
 # JavaScript basics
 
@@ -1318,6 +1430,10 @@ Function for recursive object copy (to JSON -> JSON to object):
 ```
 const cloned = JSON.parse(JSON.stringify(original))
 ```
+
+## onChange
+
+In native JS onchange activated when element lost focus. In React JS after every click.
 
 # API
 
